@@ -7,15 +7,15 @@
   
   <title>逍 - BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三、消息发送【重点】添加依赖 12345&lt;dependency&gt;    &lt;groupId&gt;org.apache.rocketmq&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;rocketmq-client&lt;&#x2F;artifactId&gt;    &lt;version&gt;4.5.2&lt;&#x2F;version&gt;&lt;&#x2F;depende">
+  <meta name="description" content="消息发送【重点】">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逍 - BLOG">
 <meta property="og:url" content="http://example.com/2021/06/23/RocketMQ/index.html">
 <meta property="og:site_name" content="逍 - BLOG">
-<meta property="og:description" content="三、消息发送【重点】添加依赖 12345&lt;dependency&gt;    &lt;groupId&gt;org.apache.rocketmq&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;rocketmq-client&lt;&#x2F;artifactId&gt;    &lt;version&gt;4.5.2&lt;&#x2F;version&gt;&lt;&#x2F;depende">
+<meta property="og:description" content="消息发送【重点】">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-23T08:23:26.938Z">
-<meta property="article:modified_time" content="2021-06-23T08:33:15.252Z">
+<meta property="article:modified_time" content="2021-06-24T07:38:16.996Z">
 <meta property="article:author" content="bloodthirsty - platinumcatgx">
 <meta name="twitter:card" content="summary">
   
@@ -78,7 +78,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="三、消息发送【重点】"><a href="#三、消息发送【重点】" class="headerlink" title="三、消息发送【重点】"></a>三、消息发送【重点】</h1><p><strong>添加依赖</strong></p>
+        <h1 id="消息发送【重点】"><a href="#消息发送【重点】" class="headerlink" title="消息发送【重点】"></a>消息发送【重点】</h1><span id="more"></span>
+
+<p><strong>添加依赖</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.rocketmq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>rocketmq-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="1-消息发送"><a href="#1-消息发送" class="headerlink" title="1. 消息发送"></a>1. 消息发送</h2><h3 id="单生产者单消费者（OneToOne）"><a href="#单生产者单消费者（OneToOne）" class="headerlink" title="单生产者单消费者（OneToOne）"></a>单生产者单消费者（OneToOne）</h3><h4 id="Producer生产者"><a href="#Producer生产者" class="headerlink" title="Producer生产者"></a>Producer生产者</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建一个发送消息的对象Producer</span></span><br><span class="line">DefaultMQProducer producer = <span class="keyword">new</span> DefaultMQProducer(<span class="string">&quot;group1&quot;</span>);</span><br><span class="line"><span class="comment">//2.设定发送的命名服务器地址</span></span><br><span class="line">producer.setNamesrvAddr(<span class="string">&quot;192.168.66.128:9876&quot;</span>);</span><br><span class="line"><span class="comment">//3.1启动发送的服务</span></span><br><span class="line">producer.start();</span><br><span class="line"><span class="comment">//4.创建要发送的消息对象,指定topic，指定内容body</span></span><br><span class="line">Message msg = <span class="keyword">new</span> Message(<span class="string">&quot;topic1&quot;</span>,<span class="string">&quot;hello rocketmq&quot;</span>.getBytes(<span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line"><span class="comment">//3.2发送消息</span></span><br><span class="line">SendResult result = producer.send(msg);</span><br><span class="line">System.out.println(<span class="string">&quot;返回结果：&quot;</span>+result);</span><br><span class="line"><span class="comment">//5.关闭连接</span></span><br><span class="line">producer.shutdown();</span><br></pre></td></tr></table></figure>
