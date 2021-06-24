@@ -7,17 +7,19 @@
   
   <title>逍 - BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="消息发送【重点】">
+  <meta name="description" content="RcoketMQ什么是MQ MQ（Message Queue）消息队列，是一种用来保存消息数据的队列。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逍 - BLOG">
 <meta property="og:url" content="http://example.com/2021/06/23/RocketMQ/index.html">
 <meta property="og:site_name" content="逍 - BLOG">
-<meta property="og:description" content="消息发送【重点】">
+<meta property="og:description" content="RcoketMQ什么是MQ MQ（Message Queue）消息队列，是一种用来保存消息数据的队列。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/06/23/RocketMQ/RocketMQ.assets/1.png">
 <meta property="article:published_time" content="2021-06-23T08:23:26.938Z">
-<meta property="article:modified_time" content="2021-06-24T07:38:16.996Z">
+<meta property="article:modified_time" content="2021-06-24T07:46:44.486Z">
 <meta property="article:author" content="bloodthirsty - platinumcatgx">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/06/23/RocketMQ/RocketMQ.assets/1.png">
   
     <link rel="alternate" href="/atom.xml" title="逍 - BLOG" type="application/atom+xml">
   
@@ -78,9 +80,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="消息发送【重点】"><a href="#消息发送【重点】" class="headerlink" title="消息发送【重点】"></a>消息发送【重点】</h1><span id="more"></span>
+        <h1 id="RcoketMQ"><a href="#RcoketMQ" class="headerlink" title="RcoketMQ"></a>RcoketMQ</h1><p><strong>什么是MQ</strong></p>
+<p>MQ（Message Queue）消息队列，是一种用来保存消息数据的队列。</p>
+<span id="more"></span>
 
-<p><strong>添加依赖</strong></p>
+<p><strong>什么是消息</strong></p>
+<p>服务器间的业务请求</p>
+<ol>
+<li>原始架构：<ol>
+<li>服务器中的A功能需要调用B、C模块才能完成</li>
+</ol>
+</li>
+<li>微服务架构：<ol>
+<li>服务器A向服务器B发送要执行的操作（视为消息）</li>
+<li>服务器A向服务器C发送要执行的操作（视为消息）</li>
+</ol>
+</li>
+</ol>
+<p><strong>MQ的作用</strong>:</p>
+<p>在项目中，可将一些无需即时返回且耗时的操作提取出来，进行<strong>异步处理</strong>，而这种异步处理的方式大大的节省了服务器的请求响应时间，从而<strong>提高</strong>了<strong>系统</strong>的<strong>吞吐量</strong>。</p>
+<ul>
+<li>应用解耦</li>
+<li>快速业务调整削峰</li>
+<li>流量晓峰</li>
+</ul>
+<p><strong>MQ 的优势</strong></p>
+<ol>
+<li>任务<strong>异步</strong>处理</li>
+<li>应用程序<strong>解耦</strong></li>
+<li>削峰填谷</li>
+</ol>
+<p><strong>MQ的缺点</strong></p>
+<p>系统可用性降低(MQ挂了程序也挂了, 但是可以通过集群解决)</p>
+<p>系统复杂度提高了</p>
+<p>异步消息机制</p>
+<ul>
+<li>消息顺序性</li>
+<li>消息丢失</li>
+<li>消息一致性</li>
+</ul>
+<h1 id="RocketMQ-消息发送"><a href="#RocketMQ-消息发送" class="headerlink" title="RocketMQ 消息发送"></a>RocketMQ 消息发送</h1><p><strong>添加依赖</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.rocketmq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>rocketmq-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.5.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="1-消息发送"><a href="#1-消息发送" class="headerlink" title="1. 消息发送"></a>1. 消息发送</h2><h3 id="单生产者单消费者（OneToOne）"><a href="#单生产者单消费者（OneToOne）" class="headerlink" title="单生产者单消费者（OneToOne）"></a>单生产者单消费者（OneToOne）</h3><h4 id="Producer生产者"><a href="#Producer生产者" class="headerlink" title="Producer生产者"></a>Producer生产者</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建一个发送消息的对象Producer</span></span><br><span class="line">DefaultMQProducer producer = <span class="keyword">new</span> DefaultMQProducer(<span class="string">&quot;group1&quot;</span>);</span><br><span class="line"><span class="comment">//2.设定发送的命名服务器地址</span></span><br><span class="line">producer.setNamesrvAddr(<span class="string">&quot;192.168.66.128:9876&quot;</span>);</span><br><span class="line"><span class="comment">//3.1启动发送的服务</span></span><br><span class="line">producer.start();</span><br><span class="line"><span class="comment">//4.创建要发送的消息对象,指定topic，指定内容body</span></span><br><span class="line">Message msg = <span class="keyword">new</span> Message(<span class="string">&quot;topic1&quot;</span>,<span class="string">&quot;hello rocketmq&quot;</span>.getBytes(<span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line"><span class="comment">//3.2发送消息</span></span><br><span class="line">SendResult result = producer.send(msg);</span><br><span class="line">System.out.println(<span class="string">&quot;返回结果：&quot;</span>+result);</span><br><span class="line"><span class="comment">//5.关闭连接</span></span><br><span class="line">producer.shutdown();</span><br></pre></td></tr></table></figure>
@@ -140,6 +179,212 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Producer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//1 创建带事务的生产者对象</span></span><br><span class="line">        TransactionMQProducer producer=<span class="keyword">new</span> TransactionMQProducer(<span class="string">&quot;group1&quot;</span>);</span><br><span class="line">        <span class="comment">//2 指定nameserver地址，连接nameserver</span></span><br><span class="line">        producer.setNamesrvAddr(<span class="string">&quot;192.168.66.128:9876&quot;</span>);</span><br><span class="line">        <span class="comment">//设置事务状态监听</span></span><br><span class="line">        producer.setTransactionListener(<span class="keyword">new</span> TransactionListener() &#123;</span><br><span class="line">            <span class="comment">//处理正常事务</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> LocalTransactionState <span class="title">executeLocalTransaction</span><span class="params">(Message msg, Object arg)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;msg = &quot;</span> + msg);</span><br><span class="line">                System.out.println(<span class="string">&quot;arg = &quot;</span> + arg);</span><br><span class="line">                <span class="comment">//return LocalTransactionState.COMMIT_MESSAGE; //正常事务，消费者可以正常接收到消息</span></span><br><span class="line">                <span class="comment">//return LocalTransactionState.ROLLBACK_MESSAGE; //回滚事务，消费者不能接收到消息</span></span><br><span class="line">                <span class="keyword">return</span> LocalTransactionState.UNKNOW; <span class="comment">//中间状态，需对MQ进行二次状态确认，进入下面事务补偿的方法</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//处理事务补偿,msg是消息队列中的消息对象</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> LocalTransactionState <span class="title">checkLocalTransaction</span><span class="params">(MessageExt msg)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;事务补偿过程执行了...&quot;</span>+msg);</span><br><span class="line">                <span class="keyword">return</span> LocalTransactionState.COMMIT_MESSAGE; <span class="comment">//再次确认时，提交事务</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//3 启动生产者服务</span></span><br><span class="line">        producer.start();</span><br><span class="line">        <span class="comment">//4 发送消息</span></span><br><span class="line">        Message message=<span class="keyword">new</span> Message(<span class="string">&quot;topic9&quot;</span>,<span class="string">&quot;事务消息：hello rocketmq&quot;</span>.getBytes(<span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">        <span class="comment">//sendMessageInTransaction方法参数2的arg值将来会传递给executeLocalTransaction方法的Object arg</span></span><br><span class="line">        SendResult result = producer.sendMessageInTransaction(message,<span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">//5 打印结果信息</span></span><br><span class="line">        System.out.println(result);</span><br><span class="line">        <span class="comment">//事务补偿过程必须保证服务器在运行过程中，否则无法进行事务补偿</span></span><br><span class="line">        <span class="comment">//producer.shutdown();</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 消费者：负责接收生产者发送过来的消息</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//1 创建消费者对象</span></span><br><span class="line">        DefaultMQPushConsumer consumer=<span class="keyword">new</span> DefaultMQPushConsumer(<span class="string">&quot;group1&quot;</span>);</span><br><span class="line">        <span class="comment">//2 指定nameserver地址，连接nameserver</span></span><br><span class="line">        consumer.setNamesrvAddr(<span class="string">&quot;192.168.66.128:9876&quot;</span>);</span><br><span class="line">        <span class="comment">//3 指定接收哪个主题哪个标题的消息,参数1：表示主题，和生产者端保持一致。参数2：表示标题，*表示任意标题</span></span><br><span class="line">        consumer.subscribe(<span class="string">&quot;topic9&quot;</span>,<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        <span class="comment">//4 设置监听，接收消息</span></span><br><span class="line">        consumer.registerMessageListener(<span class="keyword">new</span> MessageListenerConcurrently() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> ConsumeConcurrentlyStatus <span class="title">consumeMessage</span><span class="params">(List&lt;MessageExt&gt; list,</span></span></span><br><span class="line"><span class="params"><span class="function">                                         ConsumeConcurrentlyContext context)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//遍历msgs集合，打印接收到的消息</span></span><br><span class="line">                list.stream().forEach(messageExt -&gt; System.out.println(<span class="string">&quot;接收的消息：&quot;</span>+<span class="keyword">new</span> String(messageExt.getBody())));</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">return</span> ConsumeConcurrentlyStatus.CONSUME_SUCCESS;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//5 启动接收消息的服务器</span></span><br><span class="line">        consumer.start();</span><br><span class="line">        System.out.println(<span class="string">&quot;接收消息的服务器已经启动，准备接收消息了...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="消息的存储"><a href="#消息的存储" class="headerlink" title="消息的存储"></a>消息的存储</h1><ol>
+<li><p>消息到达MQ</p>
+</li>
+<li><p>MQ持久化消息</p>
+</li>
+<li><p>MQ返回ACＫ给生产者</p>
+</li>
+<li><p>MQ push 消息给对应的消费者</p>
+</li>
+<li><p>消费者返回ACK给MQ</p>
+</li>
+<li><p>数据库 activeMQ 缺点: 数据库成为MQ瓶颈 文件系统 消息刷盘机制进行存储</p>
+</li>
+</ol>
+<h2 id="读写方式"><a href="#读写方式" class="headerlink" title="读写方式"></a>读写方式</h2><p>高效消息存储与<code>读写方式</code> 数据读写 磁盘会有碎片</p>
+<ul>
+<li><p>随机写 (MAX 100kb/s)</p>
+</li>
+<li><p>顺序写 (MAX 600MB/s) : 在内容尾部添加内容</p>
+</li>
+</ul>
+<p>随机写和顺序写都是计算机内部的机制</p>
+<h2 id="MQ如何尽量保证顺序写-零拷贝技术"><a href="#MQ如何尽量保证顺序写-零拷贝技术" class="headerlink" title="MQ如何尽量保证顺序写 , 零拷贝技术"></a>MQ如何尽量保证顺序写 , 零拷贝技术</h2><p>RMQ:</p>
+<p>先开辟一块空间, 先占用, 需要存储时再存储到这一块空间</p>
+<p>linux系统网络发送数据的方式</p>
+<p><code>零拷贝技术</code>： 跳过用户态</p>
+<p>硬盘数据 -&gt; 内核态 -&gt; 用户态 -&gt; 网络驱动内核 -&gt; 网卡 -&gt; 内存数据</p>
+<p>RMQ使用MappedByteBuffer实现技术</p>
+<p>要求: 需要预留大量空间</p>
+<h2 id="消息存储结构"><a href="#消息存储结构" class="headerlink" title="消息存储结构"></a>消息存储结构</h2><p>内部存储结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">| MQ数据存储区域</span><br><span class="line">    | 消息数据存储区域 (commitlog)</span><br><span class="line">        | 消息队列(MessageQueue)</span><br><span class="line">        | ...</span><br><span class="line">    | 消费逻辑队列(和消息队列一一绑定)</span><br><span class="line">    | 索引</span><br><span class="line">        | key索引</span><br><span class="line">        | 时间索引</span><br><span class="line">        | ...</span><br></pre></td></tr></table></figure>
+
+<!--
+    索引和消息队列知识辅助消息队列存储
+-->
+
+<h2 id="刷盘机制"><a href="#刷盘机制" class="headerlink" title="刷盘机制"></a>刷盘机制</h2><p>MQ将消息队列中的消息, 存储到硬盘的过程</p>
+<p>同步过程</p>
+<ol>
+<li><p>生产者发送消息到MQ, MQ接收到消息数据</p>
+</li>
+<li><p>MQ挂起生产者发送消息的线程</p>
+</li>
+<li><p>MQ将消息写入内存</p>
+</li>
+<li><p>内存数据写入磁盘</p>
+</li>
+<li><p>磁盘存储后返回success</p>
+</li>
+<li><p>MQ回复挂起的生产者线程</p>
+</li>
+<li><p>发送ACK到生产者</p>
+</li>
+</ol>
+<p>异部刷盘 (不挂起, 不需要磁盘返回success)</p>
+<ol>
+<li><p>生产者发送消息到MQ, MQ接收到消息数据</p>
+</li>
+<li><p>MQ将消息写入内存</p>
+</li>
+<li><p>数据积攒到一定量时, 内存数据写入磁盘</p>
+</li>
+<li><p>发送ACK到生产者</p>
+</li>
+</ol>
+<p>区别:</p>
+<ul>
+<li>同步 安全性高, 效率低, 速度慢</li>
+<li>异步 安全性低, 效率高, 速度快</li>
+</ul>
+<h2 id="高可用-主从复制"><a href="#高可用-主从复制" class="headerlink" title="高可用, 主从复制"></a>高可用, 主从复制</h2><h4 id="高可用性"><a href="#高可用性" class="headerlink" title="高可用性"></a>高可用性</h4><p>其中一部分挂了, 是否还可用</p>
+<ul>
+<li><p>nameserver</p>
+<ul>
+<li>无状态+全服务器注册</li>
+</ul>
+</li>
+<li><p>消息服务器</p>
+<ul>
+<li>主从架构（2M-2S）</li>
+</ul>
+</li>
+<li><p>消息<strong>生产</strong></p>
+<ul>
+<li>生产者将相同的topic绑定到多个group组，保障master挂掉后，其他master仍可正常进行消息接收</li>
+</ul>
+</li>
+<li><p>消息<strong>消费</strong> (当繁忙时master只写, slave只读)</p>
+<ul>
+<li>RocketMQ自身会根据master的压力确认是否由master承担消息读取的功能，当master<strong>繁忙</strong>时候，自动切换由slave承担数据读取的工作</li>
+</ul>
+</li>
+</ul>
+<h4 id="主从数据复制"><a href="#主从数据复制" class="headerlink" title="主从数据复制"></a>主从数据复制</h4><ul>
+<li><p>同步复制： master接到消息后，先复制到slave，然后反馈给生产者写操作成功</p>
+<ul>
+<li><p>优点：数据安全，不丢数据，出现故障容易恢复</p>
+</li>
+<li><p>缺点：影响数据吞吐量，整体性能低</p>
+</li>
+</ul>
+</li>
+<li><p>异步复制： master接到消息后，立即返回给生产者写操作成功，当消息达到一定量后再异步复制到slave</p>
+<ul>
+<li><p>优点：数据吞吐量大，操作延迟低，性能高</p>
+</li>
+<li><p>缺点：数据不安全，会出现数据丢失的现象，一旦master出现故障，从上次数据同步到故障时间的数据将丢失</p>
+</li>
+</ul>
+</li>
+<li><p>配置方式</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">Broker 的角色</span></span><br><span class="line"><span class="meta">#</span><span class="bash">- ASYNC_MASTER 异步复制Master</span></span><br><span class="line"><span class="meta">#</span><span class="bash">- SYNC_MASTER 同步双写Master</span></span><br><span class="line"><span class="meta">#</span><span class="bash">- SLAVE</span></span><br><span class="line">brokerRole=SYNC_MASTER</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>MQ是自动进行负载均衡的</p>
+<p>Producer负载均衡</p>
+<p>同一个broker, 进行的消息进行负载均衡</p>
+<p>Consumer负载均衡</p>
+<p>平均分配</p>
+<p>循环平均分配</p>
+<p><img src="./RocketMQ.assets/1.png"></p>
+<h2 id="消息重试-与-死信队列"><a href="#消息重试-与-死信队列" class="headerlink" title="消息重试 与 死信队列"></a>消息重试 与 死信队列</h2><p>当消息消费后未返回成功信息将启动重试机制</p>
+<ul>
+<li>顺序消息重试<ul>
+<li>失败后, MQ会自动进行消息重试(每次间隔1秒)</li>
+<li>会出现消费被阻塞</li>
+</ul>
+</li>
+<li>无序消息重试 (默认重试16词, 总时长4时45分钟)<ul>
+<li>无序消息包括普通消息、定时消息、延时消息、事务消息</li>
+<li> 无序消息重试仅适用于负载均衡（集群）模型下的消息消费，不适用于广播模式下的消息消费</li>
+<li>为保障无序消息的消费，MQ设定了合理的消息重试间隔时长</li>
+</ul>
+</li>
+</ul>
+<p><strong>死信队列</strong></p>
+<p><strong>概念：当消息消费重试到达了指定次数（默认16次）后，MQ将无法被正常消费的消息称为死信消息（Dead-Letter Message） 。死信消息会存在一个单独的队列中，这个队列叫做死信队列。</strong></p>
+<p>死信消息不会被直接抛弃，而是保存到了一个全新的队列中，该队列称为死信队列（Dead-Letter Queue）</p>
+<ul>
+<li><p>死信队列特征</p>
+<ul>
+<li>归属某一个组（Gourp Id），而不归属Topic，也不归属消费者</li>
+<li>一个死信队列中可以包含同一个组下的多个Topic中的死信消息</li>
+<li>死信队列不会进行默认初始化，当第一个死信出现后，此队列首次初始化</li>
+</ul>
+</li>
+<li><p>死信队列中消息特征</p>
+<ul>
+<li>不会被再次重复消费</li>
+<li>死信队列中的消息有效期为3天，达到时限后将被清除</li>
+</ul>
+</li>
+</ul>
+<p><strong>死信处理方式</strong> </p>
+<p>在监控平台中，通过查找死信，获取死信的messageId，然后通过id对死信进行精准消费</p>
+<h2 id="消息幂等"><a href="#消息幂等" class="headerlink" title="消息幂等"></a>消息幂等</h2><p>重复消息</p>
+<p>原因:</p>
+<ol>
+<li>生产者发送了重复的消息<ol>
+<li>生产者发送了重复的消息<ol>
+<li>MQ给生产者发送ACK时<strong>网络闪断</strong>, 然后生产者又发送一次消息 ()</li>
+<li>生产者宕机</li>
+</ol>
+</li>
+<li>消息服务器投递了重复的消息<ol>
+<li>网络闪断</li>
+<li>消费者宕机</li>
+</ol>
+</li>
+<li>动态负载均衡<ol>
+<li>网络抖动/闪断</li>
+<li>broker重启</li>
+<li>订阅方应用重启</li>
+<li>客户端扩容</li>
+<li>客户端缩容</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>解决方案:</p>
+<ul>
+<li>使用业务id作为消息的key</li>
+<li>在消费消息时, 客户端对key做判定,未使用过方向, 使用过抛弃</li>
+</ul>
+<p>messageId由MQ产生, massageid并不具有唯一性</p>
+<p><strong>常见的幂等方法</strong></p>
+<ul>
+<li>新增: 不幂等</li>
+<li>查询: 幂等</li>
+<li>删除: 幂等</li>
+<li>修改: 不幂等 update account set balance=balance+10 where no = 1</li>
+<li>修改: 幂等  update account set balance=10 where no = 1</li>
+</ul>
 
       
     </div>
