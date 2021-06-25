@@ -66,9 +66,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-SpringBoot整合RocketMQ" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-spring/SpringBoot整合RocketMQ" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/06/24/SpringBoot%E6%95%B4%E5%90%88RocketMQ/" class="article-date">
+    <a href="/2021/06/24/spring/SpringBoot%E6%95%B4%E5%90%88RocketMQ/" class="article-date">
   <time datetime="2021-06-24T13:43:31.242Z" itemprop="datePublished">2021-06-24</time>
 </a>
     
@@ -78,13 +78,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 整合rocketmq</span></span><br><span class="line"><span class="attr">rocketmq:</span></span><br><span class="line">  <span class="attr">name-server:</span> <span class="string">localhost:9876</span></span><br><span class="line"><span class="comment">#  name-server: 139.9.37.235:9876</span></span><br><span class="line">  <span class="attr">producer:</span></span><br><span class="line">    <span class="attr">group:</span> <span class="string">rocketmq_springboot_producer_group1</span></span><br><span class="line">    <span class="attr">send-message-timeout:</span> <span class="number">3000</span></span><br><span class="line">    <span class="attr">retry-times-when-send-async-failed:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">retry-times-when-send-failed:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">max-message-size:</span> <span class="number">4098</span> <span class="comment"># 4mb</span></span><br></pre></td></tr></table></figure>
-
-
+        <p>Spring 整合 Rocket MQ</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/06/24/spring/SpringBoot%E6%95%B4%E5%90%88RocketMQ/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/SpringBoot%E6%95%B4%E5%90%88RocketMQ/" data-id="ckqayiz4r0000i81z0fyn68bl" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/24/spring/SpringBoot%E6%95%B4%E5%90%88RocketMQ/" data-id="ckqbx1ikb0009ss1zduhl9613" class="article-share-link">Share</a>
       
       
     </footer>
@@ -94,9 +97,9 @@
 
 
   
-    <article id="post-RocketMQ" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-框架2/RocketMQ" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/06/23/RocketMQ/" class="article-date">
+    <a href="/2021/06/23/%E6%A1%86%E6%9E%B62/RocketMQ/" class="article-date">
   <time datetime="2021-06-23T08:23:26.938Z" itemprop="datePublished">2021-06-23</time>
 </a>
     
@@ -110,13 +113,13 @@
 <p>MQ（Message Queue）消息队列，是一种用来保存消息数据的队列。</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/23/RocketMQ/#more">Read More</a>
+            <a href="/2021/06/23/%E6%A1%86%E6%9E%B62/RocketMQ/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/RocketMQ/" data-id="ckq97z1bj0000rg1zeqowhk09" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/23/%E6%A1%86%E6%9E%B62/RocketMQ/" data-id="ckqbx1ikq0017ss1zecrm4pvb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -453,9 +456,495 @@
 
 
   
-    <article id="post-ElasticSearch" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-oracle/触发器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/06/19/ElasticSearch/" class="article-date">
+    <a href="/2021/06/21/oracle/%E8%A7%A6%E5%8F%91%E5%99%A8/" class="article-date">
+  <time datetime="2021-06-21T00:58:21.555Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/21/oracle/%E8%A7%A6%E5%8F%91%E5%99%A8/">触发器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h1><p>制定一个规则, 在增删该时, 只要满足则自动触发</p>
+<p>加for each row 是为了使用:old 或者:new对象或者一行记录</p>
+<h2 id="语句触发器"><a href="#语句触发器" class="headerlink" title="语句触发器"></a>语句触发器</h2><p>不包含 for each row</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">--插入一条记录,输入一个新员工入职</span><br><span class="line">create or replace triggern t1</span><br><span class="line">after</span><br><span class="line">insert</span><br><span class="line">on emp</span><br><span class="line">declare</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">	dbms_output.put_line(&#x27;一个新员工入职&#x27;);</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="行级触发器"><a href="#行级触发器" class="headerlink" title="行级触发器"></a>行级触发器</h2><p>包含 for each row</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">--不能给员工降薪</span><br><span class="line">create or replace triggern t2</span><br><span class="line">before</span><br><span class="line">update</span><br><span class="line">on emp</span><br><span class="line">for each row</span><br><span class="line">declare</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">    if :old.sal&gt;:new.sal then</span><br><span class="line">        raise_application_error(-20001,&#x27;不能给员工降薪&#x27;);---20001~-20999之间</span><br><span class="line">    end if;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h4 id="触发器实现主键自增"><a href="#触发器实现主键自增" class="headerlink" title="触发器实现主键自增"></a>触发器实现主键自增</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*分析:</span><br><span class="line">在用户做插入操作之前, 拿到即将插入的数据, 给该数据的主键列赋值.*/</span><br><span class="line">--创建触发器</span><br><span class="line">create or replace trigger auid</span><br><span class="line">befor</span><br><span class="line">on emp</span><br><span class="line">for each row</span><br><span class="line">declare</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">	select s_person.nextval into :new.pid from dual;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/%E8%A7%A6%E5%8F%91%E5%99%A8/" data-id="ckqbx1ik60005ss1z4bhtboa6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-oracle/存储过程与存函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/21/oracle/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%AD%98%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2021-06-21T00:57:20.773Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/21/oracle/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%AD%98%E5%87%BD%E6%95%B0/">存储过程与存函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><p>提前编译好的一段pl/sql语言,放置在数据库端,可以直接被调用.这一段pl/sql一般都是<strong>固定步骤</strong>的业务.</p>
+<p>语法:</p>
+<blockquote>
+<p>create [or rplace] procedure 过程名(Name in type,…)</p>
+<p>as</p>
+<p>begin</p>
+<p>end;</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">--给指定员工涨100工资</span><br><span class="line">create or replace procedure p1(eno emp.empno%type)--创建</span><br><span class="line">as</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">	update emp set sal = sal+100 where empno = eno;</span><br><span class="line">	commit;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--测试p1</span><br><span class="line">declare</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">	p1(7788);</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="存储函数"><a href="#存储函数" class="headerlink" title="存储函数"></a>存储函数</h1><p>语法:</p>
+<blockquote>
+<p>create [or rplace] functioon 函数名(Name in type,…) return 数据类型 </p>
+<p>is 结果变量 数据类型</p>
+<p>begin</p>
+<p>return (结果变量)</p>
+<p>end;</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--计算指定员工的年薪</span><br><span class="line">create or replace function f_yearsal (eno emp.empno%type) return number --不能定义长度</span><br><span class="line">is s number(10)</span><br><span class="line">begin</span><br><span class="line">	select sal * 12+nvl(comm,0) into s from emp where empno = eno;</span><br><span class="line">	return s;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<p><strong>存储过程</strong>和<strong>存储函数</strong>的<em>参数</em>, 都不能带长度,<strong>存储函数</strong>的<em>返回值</em>类型不能带长度</p>
+<p><strong>存储函数</strong>的<em>返回值</em>需要接受</p>
+<h2 id="out类型参数"><a href="#out类型参数" class="headerlink" title="out类型参数"></a>out类型参数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">--计算年薪</span><br><span class="line">create or replace procedure p_yearsal(eno in emp.empno%type,yearsal out number )</span><br><span class="line">is</span><br><span class="line">	s number(10);</span><br><span class="line">	s emp.comm%type;</span><br><span class="line">begin</span><br><span class="line">	select sal*12,nvl(comm,0) into s,c from emp where empno = eno;</span><br><span class="line">	yearsal := s+c;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	yearsal number(10)</span><br><span class="line">begin</span><br><span class="line">	p_yearsal(7788,yearsal);</span><br><span class="line">	dbms_output.put_line(yearsal);</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<p><strong>in 和 out类型参数的区别</strong></p>
+<p>涉及到into 查询语句的赋值, 或 :=操作赋值,  都必须使用out修饰</p>
+<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>存储过程于存储函数的取别</strong></p>
+<p>语法:  </p>
+<ul>
+<li>关键字不同</li>
+<li>存储函数比存储过程比多了2个out [本质]<ul>
+<li>存储函数有<em>返回值</em>, 存储过程没有<em>返回值</em>, 只有存储函数可以自定义函数<ul>
+<li>select 函数名(参数) from 表名;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%AD%98%E5%87%BD%E6%95%B0/" data-id="ckqbx1ikc000css1z45xs2lc8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-oracle/视图 - 索引" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/21/oracle/%E8%A7%86%E5%9B%BE%20-%20%E7%B4%A2%E5%BC%95/" class="article-date">
+  <time datetime="2021-06-21T00:56:22.114Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/21/oracle/%E8%A7%86%E5%9B%BE%20-%20%E7%B4%A2%E5%BC%95/">视图 - 索引</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>一个查询的窗口, 所有的数据来自于原表</p>
+<p>视图的作用:</p>
+<ul>
+<li>屏蔽掉一些敏感字段</li>
+<li>保证总部和分部数据及时同意</li>
+</ul>
+<blockquote>
+<p> 使用查询语句创建表</p>
+<p>create table emp as select * from scott.emp;</p>
+</blockquote>
+<p>创建视图 <strong>[<strong>必须有dba权限</strong>]</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> v_emp <span class="keyword">as</span> <span class="keyword">select</span> ename, job <span class="keyword">from</span> emp;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> v_emp_r <span class="keyword">as</span> <span class="keyword">select</span> ename, job <span class="keyword">from</span> emp <span class="keyword">with</span> read <span class="keyword">only</span>;<span class="comment">--创建只读视图</span></span><br></pre></td></tr></table></figure>
+
+<p>查询视图</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> v_emp;</span><br></pre></td></tr></table></figure>
+
+<p>修改视图</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update v_emp <span class="keyword">set</span> job<span class="operator">=</span><span class="string">&#x27;JAVA&#x27;</span> <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;SMITH&#x27;</span>;<span class="comment">--不推荐</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>在表的列上构建一个二叉树,</p>
+<p>可以大幅度提升查找的效率, 但是会影响增删改的效率</p>
+<h2 id="单列索引"><a href="#单列索引" class="headerlink" title="单列索引"></a>单列索引</h2><p>创建索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> index idx_ename <span class="keyword">on</span> emp(ename);</span><br></pre></td></tr></table></figure>
+
+<h4 id="触发规则"><a href="#触发规则" class="headerlink" title="触发规则"></a>触发规则</h4><p>必须是索引列中的原始值, <strong>单行函数</strong>, <strong>模糊查询</strong>, 都会影响索引的触发</p>
+<h2 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h2><p>第一列为优先检索列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> index idx_ename_job <span class="keyword">on</span> emp(ename,job);</span><br></pre></td></tr></table></figure>
+
+<h4 id="触发规则-1"><a href="#触发规则-1" class="headerlink" title="触发规则"></a>触发规则</h4><p>必须包含有优先检索列中的原始值</p>
+<p>例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;SMITH&#x27;</span> <span class="keyword">and</span> job<span class="operator">=</span><span class="string">&#x27;JAVA&#x27;</span>;<span class="comment">--触发复合索引</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;SMITH&#x27;</span> <span class="keyword">or</span> job<span class="operator">=</span><span class="string">&#x27;JAVA&#x27;</span>;<span class="comment">--不触发索引, or本质是2条语句, 其中有一个不触发, 则这条语句不触发</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;SMITH&#x27;</span>;<span class="comment">--触发单列索引</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/%E8%A7%86%E5%9B%BE%20-%20%E7%B4%A2%E5%BC%95/" data-id="ckqbx1ik60004ss1z494df7bo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-oracle/SQL-plsql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/21/oracle/SQL-plsql/" class="article-date">
+  <time datetime="2021-06-21T00:55:14.306Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/21/oracle/SQL-plsql/">Oracle - PL / SQL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="pl-sql编程"><a href="#pl-sql编程" class="headerlink" title="pl/sql编程"></a>pl/sql编程</h1><p>是对sql语言的扩展, 使得sql语言具有<strong>过程</strong>化编程的特性</p>
+<p>主要用来编写存储过程和存储函数等</p>
+<h2 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h2><p><strong>声明方法</strong></p>
+<p>没有大括号, 用begin/end表示开始和结束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">--可以定义变量</span><br><span class="line">	i number(3,2) := 10;--用:=赋值</span><br><span class="line">	s varchar2(10) :=&#x27;小明&#x27;;</span><br><span class="line">	ena emp.ename%type;--指定为emp表的ename列的数据类型, 引用型变量</span><br><span class="line">	emprow emp%;--记录型变量</span><br><span class="line">begin--处理业务逻辑</span><br><span class="line">	dbms_output.put_line(i);--输出,相当于Java的System.out.println(i)</span><br><span class="line">	dbms_output.put_line(s);</span><br><span class="line">	select ename into ena from emp where empno = 7788;--用查询语句[into ena]赋值</span><br><span class="line">	select * into emprow from emp where empno = 7788;</span><br><span class="line">	dbms_output.put_line(ena);</span><br><span class="line">	dbms_output.put_line(emprow.ename|| &#x27;的工作为&#x27; || emprow.job);--||是连接符</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<p><strong>定义且赋值:</strong></p>
+<ul>
+<li>变量名 类型 := 值;</li>
+<li>select 列明 into 变量名 from 表明 where 条件;</li>
+</ul>
+<h2 id="pl-sql中的if判断"><a href="#pl-sql中的if判断" class="headerlink" title="pl/sql中的if判断"></a>pl/sql中的if判断</h2><blockquote>
+<p>输入小于18的数字, 输出未成年</p>
+<p>, &gt;18 &amp;&amp; &lt;40 中年人</p>
+<p>, &gt;40 老年人</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	i num(3) :=&amp;i;--得到一个输入的值</span><br><span class="line">begin</span><br><span class="line">	if i&lt;18 then</span><br><span class="line">		dbms_output.put_line(&#x27;未成年&#x27;);</span><br><span class="line">	elsif i&lt;40 then</span><br><span class="line">		dbms_output.put_line(&#x27;中年人&#x27;);</span><br><span class="line">	else</span><br><span class="line">		dbms_output.put_line(&#x27;老年人&#x27;);</span><br><span class="line">	end if;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="loop循环"><a href="#loop循环" class="headerlink" title="loop循环"></a>loop循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	i number(2) :=1;</span><br><span class="line">begin</span><br><span class="line">	while i&lt;11 loop</span><br><span class="line">		dbms_output.put_line(i);</span><br><span class="line">		i := i+1;</span><br><span class="line">	end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="exit循环"><a href="#exit循环" class="headerlink" title="exit循环"></a>exit循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	i number(2) :=1;</span><br><span class="line">begin</span><br><span class="line">	loop</span><br><span class="line">		exit when i&gt;10;</span><br><span class="line">			dbms_output.put_line(i);</span><br><span class="line">		i := i+1;</span><br><span class="line">	end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">	for i in 1..10 loop</span><br><span class="line">		dbms_output.put_line(i);</span><br><span class="line">	end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h2><p>类似Java中的集合, 可以存放多个对象, 多行记录</p>
+<blockquote>
+<p>输出emp表中所有员工的姓名</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	cursor c1 is select * from emp;</span><br><span class="line">	emprow emp%rowtype;</span><br><span class="line">begin</span><br><span class="line">	open c1;</span><br><span class="line">		loop</span><br><span class="line">			fetch c1 into emprow;--取值</span><br><span class="line">			exit when c1%notfound;--无法取到里面的值则退出</span><br><span class="line">			dbms_output.put_line(emprow.ename);</span><br><span class="line">		end loop;</span><br><span class="line">	close c1;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<p>给指定部门员工涨工资</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	cursor c2(eno emp.deptno%type) </span><br><span class="line">	is select empno from emp where deptno = eno;--带参数的游标</span><br><span class="line">	en emp.empmo%type;</span><br><span class="line">begin</span><br><span class="line">	open c2(10);</span><br><span class="line">		loop</span><br><span class="line">			fetch c2 into en;</span><br><span class="line">			exit when c2%notfound;</span><br><span class="line">			update emp set sal = sal+100 where empno=en;</span><br><span class="line">			commit;</span><br><span class="line">		end loop;</span><br><span class="line">	close c1;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/SQL-plsql/" data-id="ckqbx1ik50003ss1z66pe4jmt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-oracle/Oracle查询" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/21/oracle/Oracle%E6%9F%A5%E8%AF%A2/" class="article-date">
+  <time datetime="2021-06-21T00:54:13.546Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/21/oracle/Oracle%E6%9F%A5%E8%AF%A2/">Oracle查询</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h1><p><strong>通用</strong>(Oracle与MySQL通用), 推荐使用, <strong>可重用</strong>性强</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--给员工起中文名</span></span><br><span class="line"><span class="keyword">select</span> e.ename,</span><br><span class="line"><span class="keyword">case</span> e.ename</span><br><span class="line"><span class="keyword">when</span> <span class="string">&#x27;SMITH&#x27;</span> <span class="keyword">then</span> <span class="string">&#x27;史密斯&#x27;</span></span><br><span class="line"><span class="keyword">when</span> <span class="string">&#x27;ALLEN&#x27;</span> <span class="keyword">then</span> <span class="string">&#x27;爱丽丝&#x27;</span></span><br><span class="line"><span class="keyword">when</span> <span class="string">&#x27;BLAKE&#x27;</span> <span class="keyword">then</span> <span class="string">&#x27;布雷克&#x27;</span></span><br><span class="line"><span class="keyword">else</span> <span class="string">&#x27;匿名&#x27;</span> <span class="comment">-- 可省略else</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">from</span> emp e; </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--判断emp表中员工工资; &gt;3000, 高收入; &lt;3000, 低收入</span></span><br><span class="line"><span class="keyword">select</span> e.ename,</span><br><span class="line"><span class="keyword">case</span></span><br><span class="line"><span class="keyword">when</span> e.sal<span class="operator">&gt;</span><span class="number">3000</span> <span class="keyword">then</span> <span class="string">&#x27;高收入&#x27;</span></span><br><span class="line"><span class="keyword">when</span> e.sal<span class="operator">&gt;</span><span class="number">1500</span> <span class="keyword">then</span> <span class="string">&#x27;中收入&#x27;</span></span><br><span class="line"><span class="keyword">else</span> <span class="string">&#x27;低收入&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">from</span> emp e; </span><br></pre></td></tr></table></figure>
+
+<p><strong>Oracle专用条件表达式</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.ename,</span><br><span class="line">decode(e.ename,</span><br><span class="line"><span class="string">&#x27;SMITH&#x27;</span>,<span class="string">&#x27;史密斯&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;ALLEN&#x27;</span>,<span class="string">&#x27;爱丽丝&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;BLAKE&#x27;</span>,<span class="string">&#x27;布雷克&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;匿名&#x27;</span>) 中文名 <span class="comment">--这里不能加单引号</span></span><br><span class="line"><span class="keyword">from</span> emp e; </span><br></pre></td></tr></table></figure>
+
+<p><code>Oracle中除了取别名, 都用单引号</code></p>
+<h1 id="函数-常用"><a href="#函数-常用" class="headerlink" title="函数(常用)"></a>函数(常用)</h1><h2 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数"></a>单行函数</h2><p>作用于一行, 返回一个值</p>
+<h3 id="字符函数"><a href="#字符函数" class="headerlink" title="字符函数"></a>字符函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">upper</span>(<span class="string">&#x27;yes&#x27;</span>) <span class="keyword">from</span> dual;<span class="comment">--小写变大写</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">lower</span>(<span class="string">&#x27;YES&#x27;</span>) <span class="keyword">from</span> dual;<span class="comment">--大变小</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> round(<span class="number">26.18</span>,<span class="number">-1</span>) <span class="keyword">from</span> dual;<span class="comment">--四舍五入,后面的参数表示保留位数</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="number">56.16</span>,<span class="number">-1</span>) <span class="keyword">from</span> dual;<span class="comment">--直接截取</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">mod</span>(<span class="number">10</span>,<span class="number">3</span>) <span class="keyword">from</span> dual;<span class="comment">--求余数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sysdate<span class="operator">-</span>e.hiredate <span class="keyword">from</span> emp e;<span class="comment">--查询所有员工入职距离现在几天</span></span><br><span class="line"><span class="keyword">select</span> sysdate<span class="operator">+</span><span class="number">1</span> <span class="keyword">from</span> dual;<span class="comment">--算出明天此刻 </span></span><br><span class="line"><span class="keyword">select</span> months_between(sysdate,e.hiredate) <span class="keyword">from</span> emp e;<span class="comment">--查询所有员工入职距离现在几月</span></span><br><span class="line"><span class="keyword">select</span> months_between(sysdate,e.hiredate)<span class="operator">/</span><span class="number">12</span> <span class="keyword">from</span> emp e;<span class="comment">--查询所有员工入职距离现在几月</span></span><br><span class="line"><span class="keyword">select</span> (sysdate<span class="operator">-</span>e.hiredate)<span class="operator">/</span><span class="number">7</span> <span class="keyword">from</span> emp e;<span class="comment">--查询所有员工入职距离现在几周</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="转换函数"><a href="#转换函数" class="headerlink" title="转换函数"></a>转换函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> to_char(sysdate,<span class="string">&#x27;fm yyyy-mm-dd hh24:mi:ss&#x27;</span>) <span class="keyword">from</span> dual;<span class="comment">-- 日期转字符串</span></span><br><span class="line"><span class="keyword">select</span> to_date(<span class="string">&#x27;2020-6-27 10:33:41&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd hh24:mi:ss&#x27;</span>) <span class="keyword">from</span> dual;<span class="comment">--字符串转日期</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="通用函数"><a href="#通用函数" class="headerlink" title="通用函数"></a>通用函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">select</span> e.sal<span class="operator">*</span><span class="number">12</span><span class="operator">+</span>nvl(e.comm,<span class="number">0</span>) <span class="keyword">from</span> emp e;<span class="comment">--算出emp表中所有员工的年薪</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">null和任意数字做算数运算,结果都是null</span></span><br><span class="line"><span class="comment">nvl(e.comm,0)</span></span><br><span class="line"><span class="comment">如果第一参数为null, 则用第二个参数代替</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="多行函数"><a href="#多行函数" class="headerlink" title="多行函数"></a>多行函数</h2><p>作用于多行, 返回一个值, 也称 聚合函数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="number">1</span>) <span class="keyword">from</span> emp;<span class="comment">--查询总数量,count(1)相当于count(主键)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>count(1)   查询总数量,count(1)相当于count(主键)</li>
+<li>sum(列名)  该列的和</li>
+<li>max(列名)  该列的最大值</li>
+<li>min(列名)  该列的最小值</li>
+<li>avg(列名)  该列的平均值</li>
+</ul>
+<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><p>注: 即使查询不报错, 结果也不一定对</p>
+<p>首先用socct登录</p>
+<h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><p>分组查询中 , 出现在<strong>group by</strong>后面的<strong>原始列</strong>, 才能出现在select后面</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询每个部门的平均工资</span></span><br><span class="line"><span class="keyword">select</span> e.deptno,<span class="built_in">avg</span>(e.sal)</span><br><span class="line"><span class="keyword">from</span> emp e</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> e.deptno;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询平均工资高于2000的部门信息</span></span><br><span class="line"><span class="keyword">select</span> e.deptno,<span class="built_in">avg</span>(e.sal) asal</span><br><span class="line"><span class="keyword">from</span> emp e</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> e.deptno</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">avg</span>(e.sal)<span class="operator">&gt;</span><span class="number">2000</span>;<span class="comment">--不能写别名来判断(asal&gt;2000)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询每个部门.工资高于800的员工的平均工资, 然后再查询出平均工资高于2000的部门</span></span><br><span class="line"><span class="keyword">select</span> e.deptno,<span class="built_in">avg</span>(e.sal)</span><br><span class="line"><span class="keyword">from</span> emp e</span><br><span class="line"><span class="keyword">where</span> e.sal<span class="operator">&gt;</span><span class="number">800</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> e.deptno</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">avg</span>(e.sal)<span class="operator">&gt;</span><span class="number">2000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Where: 过滤分组<strong>前</strong>的数据, 必须在group by之前</p>
+<p>Having: 过滤分组<strong>后</strong>的数据, 在group by之后</p>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h3 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">from</span> emp, dept;<span class="comment">--emp中12条数据, dept中4条,结果为48条</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="等值连接"><a href="#等值连接" class="headerlink" title="等值连接"></a>等值连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> emp e, dept d</span><br><span class="line"><span class="keyword">where</span> e.deptno<span class="operator">=</span>d.deptno;<span class="comment">--结果12条</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> emp e <span class="keyword">inner</span> <span class="keyword">join</span> dept d</span><br><span class="line"><span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno;<span class="comment">--结果也是12条, 推荐使用等值连接</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询出所有部门, 以及部门下的员工信息[右外连接]</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">from</span> emp e <span class="keyword">right</span> <span class="keyword">join</span> dept d</span><br><span class="line"><span class="keyword">on</span> e.deptno <span class="operator">=</span> d.deptno;<span class="comment">--结果13行, 多了一个没有员工的部门</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询出所有员工, 以及员工所属部门[左外连接]</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">from</span> emp e <span class="keyword">left</span> <span class="keyword">join</span> dept d</span><br><span class="line"><span class="keyword">on</span> e.deptno <span class="operator">=</span> d.deptno;<span class="comment">--结果12行, 没有员工的部门并不存在</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Oracle专用外连接"><a href="#Oracle专用外连接" class="headerlink" title="Oracle专用外连接"></a>Oracle专用外连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> emp e, dept d</span><br><span class="line"><span class="keyword">where</span> e.deptno(<span class="operator">+</span>) <span class="operator">=</span> d.deptno;<span class="comment">--13</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> emp e, dept d</span><br><span class="line"><span class="keyword">where</span> e.deptno <span class="operator">=</span> d.deptno(<span class="operator">+</span>);<span class="comment">--12</span></span><br><span class="line"><span class="comment">--(+)所在的位置列, 会显示所有的数据</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询出员工姓名, 员工领导姓名[自连接: 在不同角度, 把一张表看成多张表]</span></span><br><span class="line"><span class="keyword">select</span> e1.ename , e2.ename</span><br><span class="line"><span class="keyword">from</span> emp e1 , emp e2</span><br><span class="line"><span class="keyword">where</span> e1.mgr <span class="operator">=</span> e2.empno;<span class="comment">--11</span></span><br><span class="line"><span class="comment">--查询出 员工姓名, 员工部门名称, 员工领导名称, 员工领导部门名称</span></span><br><span class="line"><span class="keyword">select</span> e1.ename, d1.dname, e2.ename, d2.dname</span><br><span class="line"><span class="keyword">from</span> emp e1, emp e2 ,dept d1, dept d2</span><br><span class="line"><span class="keyword">where</span> e1.mgr <span class="operator">=</span> e2.empno</span><br><span class="line"><span class="keyword">and</span> e1.deptno <span class="operator">=</span> d1.deptno</span><br><span class="line"><span class="keyword">and</span> e2.deptno <span class="operator">=</span> d2.deptno;<span class="comment">--11</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>子查询返回一个值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询出工资和scott一样的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">where</span> sal <span class="operator">=</span>(<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> ename <span class="keyword">in</span> <span class="string">&#x27;SMITH&#x27;</span>); <span class="comment">--1</span></span><br><span class="line"><span class="comment">--ename in &#x27;SMITH&#x27; </span></span><br><span class="line"><span class="comment">--ename 不能保证唯一, 所以用in 而不用=</span></span><br></pre></td></tr></table></figure>
+
+<p>子查询返回一个集合</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询出工资和10号部门任意员工一样的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="keyword">in</span></span><br><span class="line">(<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> deptno<span class="operator">=</span><span class="number">10</span>);<span class="comment">--3</span></span><br></pre></td></tr></table></figure>
+
+<p>子查询返回一张表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询出每个部门最低工资, 和最低工资员工姓名, 和该员工所在部门名称</span></span><br><span class="line"><span class="keyword">select</span> t.deptno , t.msal , e.ename , d.dname</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">    <span class="keyword">select</span> deptno ,<span class="built_in">min</span>(sal) msal<span class="comment">--每个部门最低工资</span></span><br><span class="line">    <span class="keyword">from</span> emp</span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> deptno</span><br><span class="line">) t , emp e, dept d</span><br><span class="line"><span class="keyword">where</span> t.deptno <span class="operator">=</span>e.deptno</span><br><span class="line"><span class="keyword">and</span> t.msal <span class="operator">=</span> e.sal</span><br><span class="line"><span class="keyword">and</span> e.deptno <span class="operator">=</span> d.deptno;<span class="comment">--3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h3><p><strong>rownum</strong> 行号</p>
+<p>在做select操作时, 每查询一行记录, 就会在该行上加一个行号, 从1开始,一次递增;</p>
+<p>排序操作会影响rownum的顺序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> rownum, e.<span class="operator">*</span> <span class="keyword">from</span> emp e <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<p>下面这个就解决了行号乱序的问题</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> rownum, t.<span class="operator">*</span> <span class="keyword">from</span> (<span class="keyword">select</span> e.<span class="operator">*</span> <span class="keyword">from</span> emp e <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span>) t ;</span><br></pre></td></tr></table></figure>
+
+<p>分页</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> rownum, t.<span class="operator">*</span> <span class="keyword">from</span> (<span class="keyword">select</span> e.<span class="operator">*</span> <span class="keyword">from</span> emp e <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span>) t <span class="keyword">where</span> rownum <span class="operator">&lt;</span><span class="number">11</span>;</span><br><span class="line"><span class="comment">--如果加上rownum&gt;5, 因为第一条数据rownum为1,导致第一个行号加不上去, 所以后面的行号也加不上去</span></span><br><span class="line"><span class="comment">--行号不能写 &gt;一个正数</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> (</span><br><span class="line">    <span class="keyword">select</span> rownum r, t.<span class="operator">*</span> </span><br><span class="line">    <span class="keyword">from</span> (</span><br><span class="line">         <span class="keyword">select</span> e.<span class="operator">*</span> </span><br><span class="line">         <span class="keyword">from</span> emp e </span><br><span class="line">         <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span></span><br><span class="line">    ) t</span><br><span class="line">    <span class="keyword">where</span> rownum <span class="operator">&lt;</span><span class="number">11</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">where</span> r <span class="operator">&gt;</span><span class="number">5</span>;<span class="comment">--5</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/Oracle%E6%9F%A5%E8%AF%A2/" data-id="ckqbx1iju0000ss1z7b3y7p7k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" rel="tag">旧笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-oracle/Oracle基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/21/oracle/Oracle%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-06-21T00:53:05.456Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/21/oracle/Oracle%E5%9F%BA%E7%A1%80/">Oracle基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>数据库, 实例, 用户, 表空间, 数据文件</p>
+<p><img src="http://bloodthirsty.top:8090/upload/2021/06/Oracle%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-eb1b564c419d4827ab396a3d13526fb4.png" alt="Oracle体系结构.png"></p>
+<h2 id="连接身份"><a href="#连接身份" class="headerlink" title="连接身份:"></a>连接身份:</h2><blockquote>
+<p>Normal(普通)</p>
+<p>Sysdba</p>
+<p>sysoper(管理员)</p>
+</blockquote>
+<h2 id="创建表空间-管理员身份"><a href="#创建表空间-管理员身份" class="headerlink" title="创建表空间(管理员身份)"></a>创建表空间(管理员身份)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span>space tablespace_name</span><br><span class="line"></span><br><span class="line">datafile <span class="string">&#x27;D:/FilePathName.dbf&#x27;</span></span><br><span class="line"></span><br><span class="line">size <span class="number">100</span>m</span><br><span class="line"></span><br><span class="line">autoextend <span class="keyword">on</span> </span><br><span class="line">next <span class="number">10</span>m;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除表空间"><a href="#删除表空间" class="headerlink" title="删除表空间"></a>删除表空间</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deop tablespace tablespace_name;</span><br></pre></td></tr></table></figure>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> gx</span><br><span class="line">identified <span class="keyword">by</span> gx</span><br><span class="line"><span class="keyword">default</span> tablespace tablespace_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="给用户授权"><a href="#给用户授权" class="headerlink" title="给用户授权"></a>给用户授权</h2><blockquote>
+<p>常用角色<br>connect  连接角色, 基本角色<br>resource 开发者角色<br>dba 超级管理员角色</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> gx;</span><br></pre></td></tr></table></figure>
+
+<h2 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h2><p><code>conn 用户名 /密码</code></p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><blockquote>
+<p> varchar, varchar2 字符串</p>
+<p>number(n)长度为n的整数</p>
+<p>number(m,n) 表示一个小数, 总长度m,小数是n</p>
+<p>Date 日期</p>
+<p>clob 大对象,文本数据,可存4G</p>
+<p>blob 大数据,二进制,可存4G</p>
+</blockquote>
+<h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_Name(</span><br><span class="line">	tid number(<span class="number">20</span>),</span><br><span class="line">	tname varchar2(<span class="number">10</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h1><p>添加列</p>
+<p><code>alter table table_Name add (gender number(1));</code></p>
+<p>修改列类型</p>
+<p><code>alter table table_Name modify gender char(1); </code></p>
+<p>修改列名称</p>
+<p><code>alter table table_name rename column gender to sex;</code></p>
+<p>删除列</p>
+<p><code>alter table table_name drop column sex;</code></p>
+<h1 id="数据增删改"><a href="#数据增删改" class="headerlink" title="数据增删改"></a>数据增删改</h1><p>增删改, 必须提交事务, 否则为脏数据</p>
+<p><code>commit;</code> </p>
+<p>添加</p>
+<p><code>insert into table_name (tid,tname ) values(1,&#39;张三&#39;);</code></p>
+<p>修改</p>
+<p><code>update table_name set tname=&#39;gx&#39; where tid=1;</code></p>
+<p>删除</p>
+<ul>
+<li><code>delete from table_name;</code>–删除表中全部记录</li>
+<li><code>drop table table_name;</code>–删除表</li>
+<li><code>truncate table table_name;</code>–先删表, 再创建表(数据量大的时候, 尤其是表中带有索引,该操作效率高)</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1><p>默认1开始, 一次递增,主要用来给主键赋值</p>
+<p>不属于某一 张表, 但是可以逻辑和表绑定</p>
+<p><strong>dual</strong>: 虚表 , 只是为了补全语法, 没有任何意义</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建序列 </span></span><br><span class="line"><span class="keyword">create</span> sequence s_table_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> s_table_name.nextval <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> s_table_name.currval <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name (tid,tname ) <span class="keyword">values</span>(s_table_name.nextval,<span class="string">&#x27;张三&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="scott用户"><a href="#scott用户" class="headerlink" title="scott用户"></a>scott用户</h1><p>默认密码: tiger</p>
+<p>可以模拟各种复杂的查询</p>
+<p>解锁scott用户</p>
+<p><code>alter user scott account unlock;</code></p>
+<p>解锁密码[重置密码]</p>
+<p><code>alter user scott identified by tiger;</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/Oracle%E5%9F%BA%E7%A1%80/" data-id="ckqbx1ijz0001ss1z842s9n5x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" rel="tag">旧笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-框架2/ElasticSearch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/19/%E6%A1%86%E6%9E%B62/ElasticSearch/" class="article-date">
   <time datetime="2021-06-19T12:07:50.018Z" itemprop="datePublished">2021-06-19</time>
 </a>
     
@@ -468,13 +957,13 @@
         <h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><p>搜索服务器</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/19/ElasticSearch/#more">Read More</a>
+            <a href="/2021/06/19/%E6%A1%86%E6%9E%B62/ElasticSearch/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/19/ElasticSearch/" data-id="ckq952cof0004941z66fm2wnu" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/19/%E6%A1%86%E6%9E%B62/ElasticSearch/" data-id="ckqbx1ikq0016ss1z1a7ofd4s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,9 +973,110 @@
 
 
   
-    <article id="post-Spring Boot 自动配置" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-spring/Spring Boot 自动装配原理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/06/18/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" class="article-date">
+    <a href="/2021/06/18/spring/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/" class="article-date">
+  <time datetime="2021-06-18T05:47:03.011Z" itemprop="datePublished">2021-06-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Spring-Boot/">Spring Boot</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/18/spring/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/">Spring Boot 自动装配原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>配置类不在引导类的包及其子包下, 配置类中的bean如何加载到IOC容器中</p>
+<p><strong>@SpringBootApplication</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这些注解是SpringBootApplication类定义上的注解</span></span><br><span class="line"><span class="comment">// 包含以下注解 (元注解均未列出)</span></span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan(excludeFilters = &#123;</span></span><br><span class="line"><span class="meta">    @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),</span></span><br><span class="line"><span class="meta">    @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) </span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>@SpringBootConfiguration</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SpringBootConfiguration &#123;</span><br><span class="line">    <span class="meta">@AliasFor( annotation = Configuration.class )</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">proxyBeanMethods</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">true</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可知: 就是@Configuration换了个名</p>
+<p><strong>@EnableAutoConfiguration</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AutoConfigurationPackage</span></span><br><span class="line"><span class="meta">@Import(AutoConfigurationImportSelector.class)</span> <span class="comment">// 自动配置导入选择器</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>@AutoConfigurationPackage</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Import(AutoConfigurationPackages.Registrar.class)</span> <span class="comment">// 自动配置包</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>@Import</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Import &#123;</span><br><span class="line">    Class&lt;?&gt;[] value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>被它导入的类, 都会被spring创建, 并放入IOC容器</p>
+<blockquote>
+<p>目前可知: </p>
+<p>spring启动时,  由于启动类有@SpringBootApplication注解, 所以spring知道后会将<code>AutoConfigurationImportSelector</code>,<code>AutoConfigurationPackages</code>创建并放入IOC容器</p>
+</blockquote>
+<p>AutoConfigurationImportSelector</p>
+<p>查看源码后, 找到以下方法</p>
+<p>方法见名知义</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选择导入</span></span><br><span class="line"><span class="keyword">public</span> String[] selectImports(AnnotationMetadata annotationMetadata) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isEnabled(annotationMetadata)) &#123;</span><br><span class="line">        <span class="keyword">return</span> NO_IMPORTS;</span><br><span class="line">    &#125;</span><br><span class="line">    AutoConfigurationEntry autoConfigurationEntry = getAutoConfigurationEntry(annotationMetadata);</span><br><span class="line">    <span class="keyword">return</span> StringUtils.toStringArray(autoConfigurationEntry.getConfigurations());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 根据导入的<span class="doctag">@Configuration</span> 类的 AnnotationMetadata 返回 AutoConfigurationImportSelector.AutoConfigurationEntry。</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> annotationMetadata 配置类的注解元数据</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> 应该导入的自动配置</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="comment">// 获取自动配置条目</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AutoConfigurationEntry <span class="title">getAutoConfigurationEntry</span><span class="params">(AnnotationMetadata annotationMetadata)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!isEnabled(annotationMetadata)) &#123;</span><br><span class="line">        <span class="keyword">return</span> EMPTY_ENTRY;</span><br><span class="line">    &#125;</span><br><span class="line">    AnnotationAttributes attributes = getAttributes(annotationMetadata);</span><br><span class="line">    List&lt;String&gt; configurations = getCandidateConfigurations(annotationMetadata, attributes);</span><br><span class="line">    configurations = removeDuplicates(configurations);</span><br><span class="line">    Set&lt;String&gt; exclusions = getExclusions(annotationMetadata, attributes);</span><br><span class="line">    checkExcludedClasses(configurations, exclusions);</span><br><span class="line">    configurations.removeAll(exclusions);</span><br><span class="line">    configurations = getConfigurationClassFilter().filter(configurations);</span><br><span class="line">    fireAutoConfigurationImportEvents(configurations, exclusions);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> AutoConfigurationEntry(configurations, exclusions);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法getAutoConfigurationEntry返回语句创建的对象中有两个参数(配置, 排除)</p>
+<p>通过这三行排除一些配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; exclusions = getExclusions(annotationMetadata, attributes);</span><br><span class="line">checkExcludedClasses(configurations, exclusions);</span><br><span class="line">configurations.removeAll(exclusions);</span><br></pre></td></tr></table></figure>
+
+<p>而配置是通过这一行代码获取的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; configurations = getCandidateConfigurations(annotationMetadata, attributes);</span><br></pre></td></tr></table></figure>
+
+<p>getCandidateConfigurations方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> List&lt;String&gt; <span class="title">getCandidateConfigurations</span><span class="params">(AnnotationMetadata metadata, AnnotationAttributes attributes)</span> </span>&#123;</span><br><span class="line">   List&lt;String&gt; configurations = SpringFactoriesLoader.loadFactoryNames(getSpringFactoriesLoaderFactoryClass(),</span><br><span class="line">         getBeanClassLoader());</span><br><span class="line">   Assert.notEmpty(configurations, <span class="string">&quot;No auto configuration classes found in META-INF/spring.factories. If you &quot;</span></span><br><span class="line">         + <span class="string">&quot;are using a custom packaging, make sure that file is correct.&quot;</span>);</span><br><span class="line">   <span class="keyword">return</span> configurations;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第一行代码就直接获取了需要加载的工厂的名称</p>
+<p>loadFactoryNames方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title">loadFactoryNames</span><span class="params">(Class&lt;?&gt; factoryType, <span class="meta">@Nullable</span> ClassLoader classLoader)</span> </span>&#123;</span><br><span class="line">    ClassLoader classLoaderToUse = classLoader;</span><br><span class="line">    <span class="keyword">if</span> (classLoader == <span class="keyword">null</span>) &#123;</span><br><span class="line">        classLoaderToUse = SpringFactoriesLoader.class.getClassLoader();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String factoryTypeName = factoryType.getName();</span><br><span class="line">    <span class="keyword">return</span> (List)loadSpringFactories(classLoaderToUse).getOrDefault(factoryTypeName, Collections.emptyList());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, List&lt;String&gt;&gt; loadSpringFactories(ClassLoader classLoader) &#123;</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; result = cache.get(classLoader);</span><br><span class="line">    <span class="keyword">if</span> (result != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 通过类加载器获取资源</span></span><br><span class="line">        <span class="comment">// FACTORIES_RESOURCE_LOCATION : </span></span><br><span class="line">        Enumeration&lt;URL&gt; urls = classLoader.getResources(FACTORIES_RESOURCE_LOCATION);</span><br><span class="line">        <span class="keyword">while</span> (urls.hasMoreElements()) &#123;</span><br><span class="line">            URL url = urls.nextElement();</span><br><span class="line">            UrlResource resource = <span class="keyword">new</span> UrlResource(url);</span><br><span class="line">            <span class="comment">// 通过resource获取配置</span></span><br><span class="line">            Properties properties = PropertiesLoaderUtils.loadProperties(resource);</span><br><span class="line">            <span class="keyword">for</span> (Map.Entry&lt;?, ?&gt; entry : properties.entrySet()) &#123;</span><br><span class="line">                <span class="comment">// 得到配置项</span></span><br><span class="line">                String factoryTypeName = ((String) entry.getKey()).trim();</span><br><span class="line">                <span class="comment">// 解析配置值, 获取所有配置</span></span><br><span class="line">                String[] factoryImplementationNames =</span><br><span class="line">                    StringUtils.commaDelimitedListToStringArray((String) entry.getValue());</span><br><span class="line">                <span class="keyword">for</span> (String factoryImplementationName : factoryImplementationNames) &#123;</span><br><span class="line">                    <span class="comment">// 将工厂实现名称加到集合中</span></span><br><span class="line">                    result.computeIfAbsent(factoryTypeName, key -&gt; <span class="keyword">new</span> ArrayList&lt;&gt;())</span><br><span class="line">                        .add(factoryImplementationName.trim());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 用包含唯一元素的不可修改列表替换所有列表</span></span><br><span class="line">        result.replaceAll((factoryType, implementations) -&gt; implementations.stream().distinct()</span><br><span class="line">                          .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList)));</span><br><span class="line">        cache.put(classLoader, result);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (IOException ex) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;Unable to load factories from location [&quot;</span> +</span><br><span class="line">                                           FACTORIES_RESOURCE_LOCATION + <span class="string">&quot;]&quot;</span>, ex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>常量的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String FACTORIES_RESOURCE_LOCATION = <span class="string">&quot;META-INF/spring.factories&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>通过搜索, 找到了好几个<code>spring.factories</code>, 随便找一个看看</p>
+<p>mybatis的</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Auto Configure</span></span><br><span class="line"><span class="meta">org.springframework.boot.autoconfigure.EnableAutoConfiguration</span>=<span class="string">\</span></span><br><span class="line"><span class="string">org.mybatis.spring.boot.autoconfigure.MybatisLanguageDriverAutoConfiguration,\</span></span><br><span class="line"><span class="string">org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration</span></span><br></pre></td></tr></table></figure>
+
+<p>spring boot读取到了这个文件, 会加载配置文件</p>
+<p>回到getCandidateConfigurations方法</p>
+<p>读取完成后会继续执行下一行代码</p>
+<p>是一个断言, 如果loadFactoryNames是空的, 会提示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">No auto configuration classes found in META-INF/spring.factories. If you &quot;</span><br><span class="line">      + &quot;are using a custom packaging, make sure that file is correct.</span><br><span class="line">      </span><br><span class="line"># 翻译</span><br><span class="line">在 META-INF/spring.factories 中找不到自动配置类。如果您正在使用自定义包装，请确保该文件是正确的。</span><br><span class="line"># 说人话</span><br><span class="line">META-INF下找不到spring.factories</span><br></pre></td></tr></table></figure>
+
+<p>然后就是一路返回</p>
+<p>AutoConfigurationPackages.Registrar.class</p>
+<p>一个内部类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * &#123;<span class="doctag">@link</span> ImportBeanDefinitionRegistrar&#125; to store the base package from the importing</span></span><br><span class="line"><span class="comment">  * configuration.</span></span><br><span class="line"><span class="comment">  * ImportBeanDefinitionRegistrar 用于存储来自导入配置的基本包</span></span><br><span class="line"><span class="comment">  * 也就是引导类所在的包</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Registrar</span> <span class="keyword">implements</span> <span class="title">ImportBeanDefinitionRegistrar</span>, <span class="title">DeterminableImports</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerBeanDefinitions</span><span class="params">(AnnotationMetadata metadata, BeanDefinitionRegistry registry)</span> </span>&#123;</span><br><span class="line">        register(registry, <span class="keyword">new</span> PackageImports(metadata).getPackageNames().toArray(<span class="keyword">new</span> String[<span class="number">0</span>]));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Set&lt;Object&gt; <span class="title">determineImports</span><span class="params">(AnnotationMetadata metadata)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Collections.singleton(<span class="keyword">new</span> PackageImports(metadata));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/18/spring/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/" data-id="ckqbx1ikc000dss1zcvj400t0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-spring/Spring Boot 原理分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/18/spring/Spring%20Boot%20%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" class="article-date">
   <time datetime="2021-06-18T01:34:16.843Z" itemprop="datePublished">2021-06-18</time>
 </a>
     
@@ -496,16 +1086,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Spring-Boot-自动配置功能"><a href="#Spring-Boot-自动配置功能" class="headerlink" title="Spring Boot 自动配置功能"></a>Spring Boot 自动配置功能</h1>
+        <h1 id="Spring-Boot-原理分析"><a href="#Spring-Boot-原理分析" class="headerlink" title="Spring Boot 原理分析"></a>Spring Boot 原理分析</h1>
         
           <p class="article-more-link">
-            <a href="/2021/06/18/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/#more">Read More</a>
+            <a href="/2021/06/18/spring/Spring%20Boot%20%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/18/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" data-id="ckq952co00000941zap1m8yl3" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/18/spring/Spring%20Boot%20%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" data-id="ckqbx1ik90008ss1zbe220by9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -515,30 +1105,123 @@
 
 
   
-    <article id="post-YAML作为配置文件" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-spring/yaml 作为配置文件的使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/06/16/YAML%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="article-date">
-  <time datetime="2021-06-16T03:14:53.661Z" itemprop="datePublished">2021-06-16</time>
+    <a href="/2021/06/16/spring/yaml%20%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2021-06-16T06:18:46.268Z" itemprop="datePublished">2021-06-16</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Spring-Boot-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">Spring Boot | 配置文件</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/16/spring/yaml%20%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">yaml 作为配置文件的使用</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="yaml的优势"><a href="#yaml的优势" class="headerlink" title="yaml的优势"></a>yaml的优势</h2><p>以数据为核心,  相对其他配置文件, 阅读起来直观, 书写起来也比较简洁</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/16/YAML%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#more">Read More</a>
-          </p>
-        
+<h2 id="yaml的语法"><a href="#yaml的语法" class="headerlink" title="yaml的语法"></a>yaml的语法</h2><h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p><strong>大小写敏感</strong>, 数据<strong>值前</strong>边必须有<strong>空格</strong>, 作为分隔符</p>
+<p>使用<strong>缩进表示层级</strong> </p>
+<p>缩进不允许使用tab键, 只允许空格(各系统对于tab空格数目可能不同)</p>
+<p>缩进空格数目不重要, 只要层级相同即可</p>
+<p><code>#</code> 表示行注释</p>
+<p>参数引用: ${key}</p>
+<h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><p>对象</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">person:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">zhangsan</span></span><br><span class="line"><span class="attr">person:</span> &#123;<span class="attr">name:</span> <span class="string">zhangsan</span>&#125; <span class="comment"># 行内写法</span></span><br></pre></td></tr></table></figure>
+
+<p>数组</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">address:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">beijing</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">shanghai</span></span><br><span class="line"><span class="attr">address:</span> [<span class="string">beijing</span>, <span class="string">shanghai</span>] <span class="comment"># 行内写法</span></span><br></pre></td></tr></table></figure>
+
+<p>纯量</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">msg1:</span> <span class="string">&#x27;hello \n world&#x27;</span> <span class="comment"># 忽略转义字符</span></span><br><span class="line"><span class="attr">msg2:</span> <span class="string">&quot;hello \n world&quot;</span> <span class="comment"># 识别转义字符</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="YAML配置文件在Spring-Boot中的应用"><a href="#YAML配置文件在Spring-Boot中的应用" class="headerlink" title="YAML配置文件在Spring Boot中的应用"></a>YAML配置文件在Spring Boot中的应用</h2><h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><h4 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h4><p>以Spring Boot获取yaml配置文件中的数据为例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取对应的配置</span></span><br><span class="line"><span class="meta">@Value(&quot;$&#123;name&#125;&quot;)</span></span><br><span class="line"><span class="comment">// 获取数组</span></span><br><span class="line"><span class="meta">@Value(&quot;$&#123;address[0]&#125;&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>@Value注解只能注入普通类型的数据，所以对象和数组中的数据要一个个取出来注入</p>
+</blockquote>
+<h4 id="通过Environment注入"><a href="#通过Environment注入" class="headerlink" title="通过Environment注入"></a>通过Environment注入</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> Environment env;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过Evironment获取</span></span><br><span class="line">env.getProperty(<span class="string">&quot;person.name&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="通过-ConfigurationProperties注解注入"><a href="#通过-ConfigurationProperties注解注入" class="headerlink" title="通过@ConfigurationProperties注解注入"></a>通过@ConfigurationProperties注解注入</h4><p>作用: 将配置参数封装到指定的Bean对象中</p>
+<p>使用: 在一个JavaBean类上, 使用<code>@ConfigurationProperties(prefix = &quot;person&quot;)</code>注解从yaml文件中注入值, 通过perfix可以指定前缀</p>
+<p>配置文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">person:</span>  </span><br><span class="line">   <span class="attr">name:</span> <span class="string">zhangsan</span></span><br><span class="line">   <span class="attr">age:</span> <span class="number">20</span></span><br><span class="line">   <span class="attr">address:</span></span><br><span class="line">  	<span class="bullet">-</span> <span class="string">beijing</span></span><br><span class="line">  	<span class="bullet">-</span> <span class="string">shanghai</span></span><br></pre></td></tr></table></figure>
+
+<p>Java类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;person&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> String[] address;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>prefix一定要写，否则不是获取person下的属性值。</p>
+<p>此处需要使用@Component将bean添加到spring容器中，封装配置参数的bean将来会运用在配置类中。</p>
+</blockquote>
+<h2 id="Profile多配置切换"><a href="#Profile多配置切换" class="headerlink" title="Profile多配置切换"></a>Profile多配置切换</h2><p>profile的作用: 在不同的环境下, 配置动态切换功能</p>
+<p><strong>配置方式</strong>: </p>
+<p>提供多个配置文件: 每一个代表一种环境</p>
+<blockquote>
+<p>例如:</p>
+<p>application-dev.properties/yml 开发环境</p>
+<p>application-test.properties/yml 测试环境</p>
+<p>application-pro.properties/yml 生产环境</p>
+</blockquote>
+<p>yml多文档方式:</p>
+<p>在yml文件中使用 <code>---</code> 分割不同的配置</p>
+<p>spring提供了配置的方式激活不同的配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为文档指定名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span> <span class="string">dev</span></span><br><span class="line"><span class="comment"># 为激活指定配置文件  </span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span></span><br><span class="line">    <span class="attr">active:</span> <span class="string">dev</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>激活方式</strong></p>
+<p>配置文件<code>spring.profiles.active=dev</code></p>
+<p>虚拟机参数<code>-Dspring.profiles.active=dev</code></p>
+<p>命令行参数<code>java –jar xxx.jar  --spring.profiles.active=dev</code></p>
+<h2 id="项目内部配置文件加载顺序"><a href="#项目内部配置文件加载顺序" class="headerlink" title="项目内部配置文件加载顺序"></a>项目内部配置文件加载顺序</h2><blockquote>
+<p> 加载顺序为上文的排列顺序，高优先级配置的属性会生效</p>
+</blockquote>
+<ol>
+<li>file:./config/：当前项目下的/config目录下</li>
+<li>file:./           ：当前项目的根目录</li>
+<li>classpath:/config/：classpath的/config目录</li>
+<li>classpath:/  ：classpath的根目录</li>
+</ol>
+<h2 id="项目外部配置文件加载顺序"><a href="#项目外部配置文件加载顺序" class="headerlink" title="项目外部配置文件加载顺序"></a>项目外部配置文件加载顺序</h2><blockquote>
+<p>外部配置文件, 是为了应对不能对文件进行修改的环境</p>
+</blockquote>
+<p>1.命令行</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar app.jar --name=&quot;Spring“ --server.port=<span class="number">9000</span></span><br></pre></td></tr></table></figure>
+
+<p>2.指定配置文件位置</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar myproject.jar --spring.config.location=e://application.properties</span><br></pre></td></tr></table></figure>
+
+<p>3.外部不带profile的properties文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">classpath</span>:<span class="string">/config/application.properties</span></span><br><span class="line"><span class="attr">classpath</span>:<span class="string">/application.properties</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config">外部化配置</a> </p>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/16/YAML%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" data-id="ckq952cob0001941z1llab28s" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/16/spring/yaml%20%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckqbx1ikk000qss1z83f8b5so" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="tag">配置文件</a></li></ul>
+
     </footer>
   </div>
   
@@ -546,9 +1229,9 @@
 
 
   
-    <article id="post-SpringBoot" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-spring/SpringBoot 基础使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/06/16/SpringBoot/" class="article-date">
+    <a href="/2021/06/16/spring/SpringBoot%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" class="article-date">
   <time datetime="2021-06-16T01:31:45.951Z" itemprop="datePublished">2021-06-16</time>
 </a>
     
@@ -562,13 +1245,13 @@
 <p>Spring Boot并不是一项技术, 它并不是为了解决了什么问题, 它只是为Spring提供了一种快速使用的方式</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/16/SpringBoot/#more">Read More</a>
+            <a href="/2021/06/16/spring/SpringBoot%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/16/SpringBoot/" data-id="ckq952coe0002941z0yz37xbp" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/16/spring/SpringBoot%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" data-id="ckqbx1ike000gss1z063y41kp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -578,9 +1261,379 @@
 
 
   
-    <article id="post-req&amp;resp" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-框架2/dubbo基础及应用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/04/23/req&resp/" class="article-date">
+    <a href="/2021/06/15/%E6%A1%86%E6%9E%B62/dubbo%E5%9F%BA%E7%A1%80%E5%8F%8A%E5%BA%94%E7%94%A8/" class="article-date">
+  <time datetime="2021-06-15T14:19:04.519Z" itemprop="datePublished">2021-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Dubbo/">Dubbo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/15/%E6%A1%86%E6%9E%B62/dubbo%E5%9F%BA%E7%A1%80%E5%8F%8A%E5%BA%94%E7%94%A8/">dubbo基础及应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="DUBBO简介"><a href="#DUBBO简介" class="headerlink" title="DUBBO简介"></a>DUBBO简介</h2><p>dubbo: 一个款微服务开发框架, 提供了 RPC通信 与 微服务治理 两大关键能力</p>
+<blockquote>
+<p>这意味着，使用 Dubbo 开发的微服务，将具备相互之间的远程发现与通信能力， 同时利用 Dubbo 提供的丰富服务治理能力，实现诸如服务发现、负载均衡、流量调度等服务治理诉求</p>
+<p>同时 Dubbo 是高度可扩展的，用户几乎可以在任意功能点去定制自己的实现， 以改变框架的默认行为满足自己的业务需求。</p>
+</blockquote>
+<p>dubbo的核心功能</p>
+<ul>
+<li>服务定义</li>
+<li>服务远程通信</li>
+<li>服务发现</li>
+<li>负载均衡</li>
+<li>流量管理</li>
+<li>动态配置</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v3.0/references/">参考手册 | Apache Dubbo </a>: 摘自官方文档</p>
+</blockquote>
+<h2 id="概念-架构图"><a href="#概念-架构图" class="headerlink" title="概念 - 架构图"></a>概念 - 架构图</h2><h3 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h3><p>即消费端发现服务端的能力, 是微服务框架需要具备的关键能力</p>
+<p>原理:<img src="https://dubbo.apache.org/imgs/architecture.png" alt="//imgs/architecture.png"></p>
+<hr>
+<blockquote>
+<p>服务发现的一个核心组件是注册中心，Provider (服务端) 注册地址到注册中心，Consumer ( 消费端) 从注册中心读取和订阅 Provider 地址列表。 因此，要启用服务发现，需要为 Dubbo 增加注册中心配置：</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># application.properties</span></span><br><span class="line"><span class="string">dubbo</span></span><br><span class="line"> <span class="string">registry</span></span><br><span class="line">  <span class="attr">address:</span> <span class="string">zookeeper://127.0.0.1:2181</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>关于 Dubbo2  vs  Dubbo3</p>
+<p>服务发现配置完全一致, 原理不同</p>
+<ul>
+<li>Dubbo3 应用级服务发现，以<strong>应用粒度</strong>组织地址数据</li>
+<li>Dubbo2 接口级服务发现，以<strong>接口粒度</strong>组织地址数据</li>
+</ul>
+<p>Dubbo3 格式的 Provider 地址不能被 Dubbo2 的 Consumer 识别到，反之 Dubbo2 的消费者也不能订阅到 Dubbo3 Provider。</p>
+<p> <a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v3.0/concepts/service-discovery/">应用级服务发现 | Apache Dubbo</a></p>
+</blockquote>
+<blockquote>
+<p>以下摘自官方文档</p>
+<p><a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v3.0/concepts/rpc-protocol/">RPC 通信协议 | Apache Dubbo</a>;</p>
+<p><a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v3.0/concepts/traffic-management/">服务流量管理 | Apache Dubbo</a>: 通过 Dubbo 定义的路由规则，实现对流量分布的控制</p>
+<p><a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v3.0/concepts/configuration/">配置管理 | Apache Dubbo</a>:描述 Dubbo 支持的配置，Dubbo 的动态配置能力。</p>
+<p><a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v3.0/concepts/extensibility/">如何扩展 Dubbo | Apache Dubbo</a>:Dubbo 通过 SPI 机制提供了非常灵活的可扩展性</p>
+</blockquote>
+<h3 id="部署架构"><a href="#部署架构" class="headerlink" title="部署架构"></a>部署架构</h3><ul>
+<li>注册中心。协调 Consumer 与 Provider 之间的地址注册与发现</li>
+<li>配置中心。<ul>
+<li>存储 Dubbo 启动阶段的全局配置，保证配置的跨环境共享与全局一致性</li>
+<li>负责服务治理规则（路由规则、动态配置等）的存储与推送。</li>
+</ul>
+</li>
+<li>元数据中心。<ul>
+<li>接收 Provider 上报的服务接口元数据，为 Admin 等控制台提供运维能力（如服务测试、接口文档等）</li>
+<li>作为服务发现机制的补充，提供额外的接口/方法级别配置信息的同步能力，相当于注册中心的额外扩展</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://dubbo.apache.org/imgs/v3/concepts/threecenters.png" alt="//imgs/v3/concepts/threecenters.png"></p>
+<p>注册中心: registry ; 配置中心 : config center ; 元数据中心 : metadata</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://dubbo.apache.org/zh/docs/v3.0/examples/">基本功能介绍与示例 | Apache Dubbo</a>  </p>
+</blockquote>
+<h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>注册中心: zookeeper (Linux) ; </p>
+<p>目的: 将一个三层架构的单体架构小程序按成拆分(不常用)</p>
+<p><strong>项目拆分</strong> (实际不会这样拆分)</p>
+<ol>
+<li><p>(service)接口拆分, 被其他模块依赖</p>
+</li>
+<li><p>service和dao拆分一层</p>
+</li>
+<li><p>controller单独拆分为一层</p>
+</li>
+<li><p>导入依赖</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--dubbo依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.dubbo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--zookeeper注册中心客户端依赖--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 注意版本问题 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>curator-recipes<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>service层 spring配置</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--1 配置项目名称--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">name</span>=<span class="string">&quot;dubbo_service&quot;</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--2 配置zookeeper注册中心地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:registry</span> <span class="attr">address</span>=<span class="string">&quot;zookeeper://127.0.0.1:2181&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 定义zookeeper内部占用的访问端口, 默认20880, 发布多个服务需要更改 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:protocol</span> <span class="attr">name</span>=<span class="string">&quot;dubbo&quot;</span> <span class="attr">port</span>=<span class="string">&quot;20880&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--3 扫描指定包，加上@Service注解的类会被发布为服务  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:annotation</span> <span class="attr">package</span>=<span class="string">&quot;com.itheima.service&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>将spring的@Service注解改为dubbo的@Service注解, 对象不再添加到spring容器( controller层分离后就无法获取这个对象了 )</p>
+</li>
+<li><p>添加web框架,  在web.xml中添加ContextLoaderListener, 监听spring配置文件(开启服务)</p>
+</li>
+<li><p>服务消费者</p>
+<ol>
+<li><p>注入service改成dubbo的@Reference注解 (从dubbo获取对象, service已经分离)</p>
+</li>
+<li><p>spirng-mvc中加入dubbo配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--1 配置项目唯一名称--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">name</span>=<span class="string">&quot;dubbo_web&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dubbo:parameter</span> <span class="attr">key</span>=<span class="string">&quot;qos.port&quot;</span> <span class="attr">value</span>=<span class="string">&quot;333333&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dubbo:application</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--2 配置zookeeper注册中心地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:registry</span> <span class="attr">address</span>=<span class="string">&quot;zookeeper://127.0.0.1:2181&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--3 扫描指定包，加上@Service注解的类会被发布为服务  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:annotation</span> <span class="attr">package</span>=<span class="string">&quot;com.itheima.controller&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>web.xml中删除contextLoaderListener配置 (spring已经分离了)</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="dubbo高级特性"><a href="#dubbo高级特性" class="headerlink" title="dubbo高级特性"></a>dubbo高级特性</h2><ol>
+<li><h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><ol>
+<li>在dubbo中传输对象需要对象实现序列化接口</li>
+</ol>
+</li>
+<li><h3 id="地址缓存"><a href="#地址缓存" class="headerlink" title="地址缓存"></a>地址缓存</h3><ol>
+<li>dubbo会缓存服务提供者地址</li>
+</ol>
+</li>
+<li><h3 id="超时与重试"><a href="#超时与重试" class="headerlink" title="超时与重试"></a>超时与重试</h3><ol>
+<li>默认情况下,  如果连接不到消费者, 会造成线程堆积, 导致雪崩</li>
+<li>使用timeout属性指定超时时间,  可以使用retries属性定义重试次数</li>
+</ol>
+</li>
+<li><h3 id="多版本"><a href="#多版本" class="headerlink" title="多版本"></a>多版本</h3><ol>
+<li>灰度发布( 针对部分用户发布 )</li>
+<li><code>@Service(version=&quot;v2.0&quot;)</code> <code>@Reference(version = &quot;v2.0&quot;)</code></li>
+</ol>
+</li>
+<li><h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><ol>
+<li><p>属性 ( AbstractLoadBalance的四个子类 )</p>
+<ol>
+<li><strong>Random</strong>按==权重==随机，默认值。按权重设置随机概率。</li>
+<li><strong>RoundRobin</strong> 按==权重==轮询。</li>
+<li><strong>LeastActive</strong> 最少==活跃==调用数,相同活跃数的随机。</li>
+<li><strong>ConsistentHash</strong>一 致性==Hash==,相同参数的请求总是发到同一提供者。</li>
+</ol>
+</li>
+<li><p>使用:</p>
+<ol>
+<li>服务端<ol>
+<li>服务提供者配置 : <code>@Service(weight = 100)</code>.</li>
+<li>weight的属性是权重值(int)<ol>
+<li>也可以通过dubbo-admin设置临时权重</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>消费端<ol>
+<li><code>@Reference(loadbalance = &quot;random&quot;)//默认 按权重随机</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>配置</p>
+<ol>
+<li><p>配置文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dubbo:protocol</span> <span class="attr">port</span>=<span class="string">&quot;20882&quot;</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--1 配置项目唯一名称--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">name</span>=<span class="string">&quot;dubbo_web&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dubbo:parameter</span> <span class="attr">key</span>=<span class="string">&quot;qos.port&quot;</span> <span class="attr">value</span>=<span class="string">&quot;33232&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dubbo:application</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--2 配置zookeeper注册中心地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:registry</span> <span class="attr">address</span>=<span class="string">&quot;zookeeper://127.0.0.1:2181&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--3 扫描指定包，加上@Service注解的类会被发布为服务  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dubbo:annotation</span> <span class="attr">package</span>=<span class="string">&quot;com.itheima.controller&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h3 id="集群容错"><a href="#集群容错" class="headerlink" title="集群容错"></a>集群容错</h3><p>服务调用发生错误后的处理方式</p>
+<ol>
+<li><p>集群容错模式</p>
+</li>
+<li><pre><code class="text">Failover Cluster  : 失败重试。默认值。当出现失败，重试其它服务器，默认重试2次，使用retries配置。一般用于读操作
+Failfast Cluster  : 快速失败,发起一次调用，失败立即报错。通常用于写操作。
+Failsafe Cluster  : 失败安全，出现异常时，直接忽略。返回一个空结果。 例如写日志
+Failback Cluster  : 失败自动恢复,后台记录失败请求,定时重发。  用于必须调用成功的操作
+Forking Cluster   : 并行调用多个服务器，只要一个成功即返回。  比较耗性能
+Broadcast Cluster : 广播调用所有提供者,逐个调用，任意一台报错则报错。 同步性高的操作
+</code></pre>
+</li>
+<li><p>消费者配置 :<code>@Reference(cluster = &quot;failover&quot;)</code></p>
+</li>
+</ol>
+</li>
+<li><h3 id="服务降级"><a href="#服务降级" class="headerlink" title="服务降级"></a>服务降级</h3><p>服务量剧增,   对部分服务采取不处理或者简单处理方式, 保证核心功能正常运行</p>
+<p>降级方式</p>
+<ol>
+<li><p><strong>mock= force:return null</strong>：表示消费方对该服务的方法调用都直接返回null值,不发起远程调用。用来屏蔽不重要服务不可用时对调用方的影响。</p>
+</li>
+<li><p><strong>mock=fail:return null</strong>：表示消费方对该服务的方法调用在失败后，再返回null值,不抛异常。用来容忍不重要服务不稳定时对调用方的影响</p>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/15/%E6%A1%86%E6%9E%B62/dubbo%E5%9F%BA%E7%A1%80%E5%8F%8A%E5%BA%94%E7%94%A8/" data-id="ckqbx1ikm000vss1zexex865j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dubbo/" rel="tag">dubbo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-框架2/ZooKeeper" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/15/%E6%A1%86%E6%9E%B62/ZooKeeper/" class="article-date">
+  <time datetime="2021-06-15T07:00:44.504Z" itemprop="datePublished">2021-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/15/%E6%A1%86%E6%9E%B62/ZooKeeper/">ZooKeeper 基础使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://bloodthirsty.top:8090/upload/2021/06/360wallpaper_dt-8f34092e2441406ea75a4a4369fbf151.jpg" alt="分享"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>数据存储结构:</p>
+<p>一个树形的目录服务, 拥有层次化结构, 每一个节点都被称为ZNODE, 每个节点都会保存自己的数据和节点信息, 同时也允许少量（1MB）数据存储在该节点之下。</p>
+<p>节点类型:</p>
+<ul>
+<li><p>PERSISTENT 持久化节点 </p>
+<p>EPHEMERAL 临时节点 ：-e</p>
+<p>PERSISTENT_SEQUENTIAL 持久化顺序节点 ：-s</p>
+<p>EPHEMERAL_SEQUENTIAL 临时顺序节点  ：-es</p>
+</li>
+</ul>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="连接-重启-状态"><a href="#连接-重启-状态" class="headerlink" title="连接, 重启, 状态"></a>连接, 重启, 状态</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启连接</span></span><br><span class="line">bash zKService.sh start</span><br><span class="line"><span class="meta">#</span><span class="bash"> 连接</span></span><br><span class="line">bash zkCli.sh --server 127.0.0.1:2181</span><br><span class="line"><span class="meta">#</span><span class="bash"> 停止</span></span><br><span class="line">bash zkServer.sh stop </span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启</span></span><br><span class="line">bash zkServer.sh restart</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看状态</span></span><br><span class="line">bash zkServer.sh status</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建持久化节点</span></span><br><span class="line">create /nodeName1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建临时节点</span></span><br><span class="line">create -e /nodeName1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建持久化顺序节点</span> </span><br><span class="line">create -s /nodeName1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建临时顺序节点</span></span><br><span class="line">create -es /nodeName1</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get /nodeName1</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set /nodeName1 value</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete /nodeName</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaAPI"><a href="#JavaAPI" class="headerlink" title="JavaAPI"></a>JavaAPI</h2><h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 重试策略</span></span><br><span class="line"></span><br><span class="line">CuratorFramework exponentialBackoffRetry = CuratorFrameworkFactory.newClient(<span class="string">&quot;172.23.200.15:2181&quot;</span>, <span class="number">60</span> * <span class="number">1000</span></span><br><span class="line">, <span class="number">15</span> * <span class="number">1000</span>, exponentialBackoffRetry);</span><br><span class="line"><span class="comment">// 通过链式编程连接</span></span><br><span class="line">CuratorFramework client = CuratorFrameworkFactory.builder()</span><br><span class="line">    .connectString(<span class="string">&quot;172.23.200.15:2181&quot;</span>)</span><br><span class="line">    .sessionTimeoutMs(<span class="number">60</span> * <span class="number">1000</span>)</span><br><span class="line">    .connectionTimeoutMs(<span class="number">15</span> * <span class="number">1000</span>)</span><br><span class="line">    .retryPolicy(exponentialBackoffRetry)</span><br><span class="line">    .namespace(<span class="string">&quot;zoo1&quot;</span>).build();</span><br><span class="line"><span class="comment">// 开启连接</span></span><br><span class="line">client.start();</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增-1"><a href="#新增-1" class="headerlink" title="新增"></a>新增</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果创建节点，没有指定数据，则默认将当前客户端的ip作为数据存储</span></span><br><span class="line"><span class="comment">// 基本创建</span></span><br><span class="line">String path = client.create().forPath(<span class="string">&quot;/app1&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建带有数据的节点</span></span><br><span class="line">String path = client.create().forPath(<span class="string">&quot;/app2&quot;</span>, <span class="string">&quot;data&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建节点并设置类型,  默认类型：持久化</span></span><br><span class="line">String path = client.create().withMode(CreateMode.EPHEMERAL).forPath(<span class="string">&quot;/app3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建多级节点, 如果父节点不存在，则创建父节点</span></span><br><span class="line">String path = client.create().creatingParentsIfNeeded().forPath(<span class="string">&quot;/app4/p1&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取-1"><a href="#获取-1" class="headerlink" title="获取"></a>获取</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询数据：get</span></span><br><span class="line"><span class="keyword">byte</span>[] data = client.getData().forPath(<span class="string">&quot;/app1&quot;</span>);</span><br><span class="line"><span class="comment">// 查询子节点： ls  </span></span><br><span class="line">List&lt;String&gt; path = client.getChildren().forPath(<span class="string">&quot;/&quot;</span>);  <span class="comment">//相当于：ls /</span></span><br><span class="line"><span class="comment">// 查询节点状态信息  ls -s</span></span><br><span class="line">Stat status = <span class="keyword">new</span> Stat();<span class="comment">// 常见状态对象</span></span><br><span class="line">client.getData().storingStatIn(status).forPath(<span class="string">&quot;/app1&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改-1"><a href="#修改-1" class="headerlink" title="修改"></a>修改</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  基本修改数据</span></span><br><span class="line">client.setData().forPath(<span class="string">&quot;/app1&quot;</span>, <span class="string">&quot;itcast&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据版本修改, version 是通过查询出来的。目的就是为了让其他客户端或者线程不干扰我。</span></span><br><span class="line">Stat status = <span class="keyword">new</span> Stat();</span><br><span class="line">client.getData().storingStatIn(status).forPath(<span class="string">&quot;/app1&quot;</span>);</span><br><span class="line">client.setData().withVersion(status.getVersion()).forPath(<span class="string">&quot;/app1&quot;</span>, <span class="string">&quot;hehe&quot;</span>.getBytes());</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 删除单个节点 delete</span></span><br><span class="line">client.delete().forPath(<span class="string">&quot;/app1&quot;</span>);</span><br><span class="line"><span class="comment">//2. 删除带有子节点的节点 deleteall</span></span><br><span class="line">client.delete().deletingChildrenIfNeeded().forPath(<span class="string">&quot;/app4&quot;</span>);</span><br><span class="line"><span class="comment">//3. 必须成功的删除, 为了防止网络抖动。本质就是重试</span></span><br><span class="line">client.delete().guaranteed().forPath(<span class="string">&quot;/app2&quot;</span>);</span><br><span class="line"><span class="comment">//4. 回调</span></span><br><span class="line">client.delete().guaranteed().inBackground(<span class="keyword">new</span> BackgroundCallback()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">processResult</span><span class="params">(CuratorFramework client, CuratorEvent event)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我被删除了~&quot;</span>);</span><br><span class="line">        System.out.println(event);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).forPath(<span class="string">&quot;/app1&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Watch监听"><a href="#Watch监听" class="headerlink" title="Watch监听"></a>Watch监听</h3><h4 id="PathChildrenCache"><a href="#PathChildrenCache" class="headerlink" title="PathChildrenCache"></a>PathChildrenCache</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建监听对象</span></span><br><span class="line">PathChildrenCache pathChildrenCache = <span class="keyword">new</span> PathChildrenCache(client,<span class="string">&quot;/app2&quot;</span>,<span class="keyword">true</span>);</span><br><span class="line"><span class="comment">//2. 绑定监听器</span></span><br><span class="line">pathChildrenCache.getListenable().addListener(<span class="keyword">new</span> PathChildrenCacheListener() &#123;    			</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">childEvent</span><span class="params">(CuratorFramework client, PathChildrenCacheEvent event)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//监听子节点的数据变更，并且拿到变更后的数据</span></span><br><span class="line">        <span class="comment">//1.获取类型</span></span><br><span class="line">        PathChildrenCacheEvent.Type type = event.getType();</span><br><span class="line">        <span class="comment">//2.判断类型是否是update</span></span><br><span class="line">        <span class="keyword">if</span>(type.equals(PathChildrenCacheEvent.Type.CHILD_UPDATED))&#123;</span><br><span class="line">            <span class="keyword">byte</span>[] data = event.getData().getData();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//3. 开启</span></span><br><span class="line">pathChildrenCache.start();</span><br></pre></td></tr></table></figure>
+
+<h4 id="TreeCache"><a href="#TreeCache" class="headerlink" title="TreeCache"></a>TreeCache</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TreeCache：监听某个节点自己和所有子节点们</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1. 创建监听器</span></span><br><span class="line">TreeCache treeCache = <span class="keyword">new</span> TreeCache(client,<span class="string">&quot;/app2&quot;</span>);</span><br><span class="line"><span class="comment">//2. 注册监听</span></span><br><span class="line">treeCache.getListenable().addListener(<span class="keyword">new</span> TreeCacheListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">childEvent</span><span class="params">(CuratorFramework client, TreeCacheEvent event)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//3. 开启</span></span><br><span class="line">treeCache.start();</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分布式锁的基础应用"><a href="#分布式锁的基础应用" class="headerlink" title="分布式锁的基础应用"></a>分布式锁的基础应用</h2><p><strong>原因</strong>: 在分布式中, 程序运行在多台机器中, JVM的锁机制已无法满足需求, 需要使用分布式锁<code>处理跨机器的进程之间的数据同步问题</code></p>
+<p><strong>实现分布式锁的方式</strong>:</p>
+<ol>
+<li>基于缓存实现: Redis (性能高, 但是不太可靠)</li>
+<li>ZooKeeper 实现分布式锁  (相对较高, 也比较可靠)</li>
+<li>数据库的悲观锁, 乐观锁 (性能比较低)</li>
+</ol>
+<p><strong>ZooKeeper实现</strong>:</p>
+<p>原理: 需要获取锁时, 创建节点, 使用完锁, 删除节点</p>
+<ol>
+<li><p>客户端获取锁时, 在lock节点下创建临时顺序节点</p>
+</li>
+<li><p>然后获取lock下面的所有子节点，客户端获取到所有的子节点之后，</p>
+<p>如果发现自己创建的子节点序号最小，那么就认为该客户端获取到了锁。</p>
+<p>使用完锁后，将该节点删除。</p>
+</li>
+<li><p>如果发现自己创建的节点并非lock所有子节点中最小的，说明自己还没有获取到锁，</p>
+<p> 此时客户端需要找到比自己小的那个节点，同时对其注册事件监听器，监听删除事件。</p>
+</li>
+<li><p>如果发现比自己小的那个节点被删除，则客户端的Watcher会收到相应通知，</p>
+<p> 此时再次判断自己创建的节点是否是lock子节点中序号最小的，如果是则获取到了锁,</p>
+<p> 如果不是则重复以上步骤继续获取到比自己小的一个节点 并注册监听。</p>
+</li>
+</ol>
+<h4 id="在Curator中有五种锁方案"><a href="#在Curator中有五种锁方案" class="headerlink" title="在Curator中有五种锁方案"></a>在Curator中有五种锁方案</h4><ul>
+<li>InterProcessSemaphoreMutex：分布式排它锁（非可重入锁）</li>
+<li>InterProcessMutex：分布式可重入排它锁</li>
+<li>InterProcessReadWriteLock：分布式读写锁</li>
+<li>InterProcessMultiLock：将多个锁作为单个实体管理的容器</li>
+<li>InterProcessSemaphoreV2：共享信号量</li>
+</ul>
+<p>Curator分布式锁API</p>
+<p><a href="#%E8%BF%9E%E6%8E%A5">初始化代码</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化</span></span><br><span class="line"><span class="comment">// 获取CuratorFramework对象</span></span><br><span class="line">InterProcessMutex lock = <span class="keyword">new</span> InterProcessMutex(curatorFramework,<span class="string">&quot;/lock&quot;</span>);</span><br><span class="line"><span class="comment">// 获取锁, 如果没有获取到锁对象会一直等待</span></span><br><span class="line">lock.acquire();</span><br><span class="line"><span class="comment">// 释放锁</span></span><br><span class="line">lock.release();</span><br></pre></td></tr></table></figure>
+
+<h2 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h2><h3 id="选举规则"><a href="#选举规则" class="headerlink" title="选举规则"></a>选举规则</h3><p><strong>serviceId</strong> : 每台服务器都有ID(Serviceid) , 编号越大在选择算法中的权重越大</p>
+<p><strong>zxId</strong> : 服务器中存放的最大ID, 在选举算法中越新权重越大</p>
+<p>在leader选举过程中, 如果某台机器获取了超过半数的选票, 就可以成为leader</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>(机器必须拥有JDK)</p>
+<ol>
+<li>获取<a target="_blank" rel="noopener" href="https://zookeeper.apache.org/releases.html">zookeeper</a>;</li>
+<li>解压, 安装(一般解压即用)…</li>
+</ol>
+<p>修改文件<code>zookeeper/conf/zoo_sample.cfg</code>为<code>zookeeper/conf/zoo.cfg</code></p>
+<p>配置</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 端口</span></span><br><span class="line"><span class="attr">clientPort</span>=<span class="string">2181</span></span><br><span class="line"><span class="comment"># data目录</span></span><br><span class="line"><span class="attr">dataDir</span>=<span class="string">/data/zookeeper</span></span><br></pre></td></tr></table></figure>
+
+<p>在每个zookeeper的 data 目录下创建一个 myid 文件，内容分别是1、2、3 。这个文件就是记录每个服务器的ID</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 伪集群</span></span><br><span class="line"><span class="meta">server.1</span>=<span class="string">192.168.149.135:2881:3881</span></span><br><span class="line"><span class="meta">server.2</span>=<span class="string">192.168.149.135:2882:3882</span></span><br><span class="line"><span class="meta">server.3</span>=<span class="string">192.168.149.135:2883:3883</span></span><br></pre></td></tr></table></figure>
+
+<p>查询zookeeper的状态</p>
+<p>Mode: follower (跟随着) / leader(领导者)</p>
+<h3 id="故障测试"><a href="#故障测试" class="headerlink" title="故障测试"></a>故障测试</h3><p><code>可运行的机器数量</code>没有超过<code>集群总数</code>的半数, leader虽然没有宕机, 但也无法运行, 再次启动从服务器, leader又可以运行了</p>
+<p>如果leader宕机, 会产生新的leader, 领导者产生后, </p>
+<p>leader产生后, 再加入新机器加入集群, 不会影响现有leader</p>
+<p>角色:</p>
+<ul>
+<li>leader (leader)<ul>
+<li>处理事务请求</li>
+<li>集群内部各服务器调度</li>
+</ul>
+</li>
+<li>follower (跟随着)<ul>
+<li>处理非事务请求, 转发事务请求给leader</li>
+<li>参与投票</li>
+</ul>
+</li>
+<li>observer (观察者)<ul>
+<li>处理非事务请求, 转发事务请求给leader</li>
+<li><code>不</code>参与投票</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/15/%E6%A1%86%E6%9E%B62/ZooKeeper/" data-id="ckqbx1ikm000uss1z6s6x7oms" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zookeeper/" rel="tag">zookeeper</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-spring/req&amp;resp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/04/23/spring/req&resp/" class="article-date">
   <time datetime="2021-04-23T06:16:05.052Z" itemprop="datePublished">2021-04-23</time>
 </a>
     
@@ -593,13 +1646,13 @@
         <h1 id="相应与请求"><a href="#相应与请求" class="headerlink" title="相应与请求"></a>相应与请求</h1>
         
           <p class="article-more-link">
-            <a href="/2021/04/23/req&resp/#more">Read More</a>
+            <a href="/2021/04/23/spring/req&resp/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/23/req&resp/" data-id="ckq952coe0003941z9560hzcx" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/23/spring/req&resp/" data-id="ckqbx1ikf000jss1z57yuet00" class="article-share-link">Share</a>
       
       
     </footer>
@@ -609,9 +1662,9 @@
 
 
   
-    <article id="post-Dubbo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-框架2/Dubbo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/21/Dubbo/" class="article-date">
+    <a href="/2019/11/21/%E6%A1%86%E6%9E%B62/Dubbo/" class="article-date">
   <time datetime="2019-11-21T05:44:57.000Z" itemprop="datePublished">2019-11-21</time>
 </a>
     
@@ -623,7 +1676,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/Dubbo/">笔记</a>
+      <a class="article-title" href="/2019/11/21/%E6%A1%86%E6%9E%B62/Dubbo/">笔记</a>
     </h1>
   
 
@@ -638,13 +1691,13 @@
 </blockquote>
         
           <p class="article-more-link">
-            <a href="/2019/11/21/Dubbo/#more">Read More</a>
+            <a href="/2019/11/21/%E6%A1%86%E6%9E%B62/Dubbo/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/11/21/Dubbo/" data-id="ckq95dgkw0000x01z6gmkcehd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2019/11/21/%E6%A1%86%E6%9E%B62/Dubbo/" data-id="ckqbx1ikk000rss1zb6cr9pjx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -661,13 +1714,20 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dubbo/">Dubbo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot/">Spring Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">Spring Boot | 配置文件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/zookeeper/">zookeeper</a></li></ul>
+    </div>
+  </div>
+
 
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" rel="tag">旧笔记 | Docker</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dubbo/" rel="tag">dubbo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zookeeper/" rel="tag">zookeeper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" rel="tag">旧笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" rel="tag">旧笔记 | Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="tag">配置文件</a></li></ul>
     </div>
   </div>
 
@@ -677,7 +1737,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" style="font-size: 10px;">旧笔记 | Docker</a>
+      <a href="/tags/dubbo/" style="font-size: 10px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">旧笔记</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" style="font-size: 10px;">旧笔记 | Docker</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" style="font-size: 20px;">旧笔记 | oracle</a> <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" style="font-size: 10px;">配置文件</a>
     </div>
   </div>
 
@@ -699,11 +1759,11 @@
       <ul>
         
           <li>
-            <a href="/2021/06/24/SpringBoot%E6%95%B4%E5%90%88RocketMQ/">(no title)</a>
+            <a href="/2021/06/24/spring/SpringBoot%E6%95%B4%E5%90%88RocketMQ/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2021/06/23/RocketMQ/">(no title)</a>
+            <a href="/2021/06/23/%E6%A1%86%E6%9E%B62/RocketMQ/">(no title)</a>
           </li>
         
           <li>
@@ -711,11 +1771,11 @@
           </li>
         
           <li>
-            <a href="/2021/06/19/ElasticSearch/">(no title)</a>
+            <a href="/2021/06/21/oracle/%E8%A7%A6%E5%8F%91%E5%99%A8/">触发器</a>
           </li>
         
           <li>
-            <a href="/2021/06/18/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/">(no title)</a>
+            <a href="/2021/06/21/oracle/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%AD%98%E5%87%BD%E6%95%B0/">存储过程与存函数</a>
           </li>
         
       </ul>

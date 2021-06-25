@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Oracle - PL / SQL | 逍 - BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="pl&#x2F;sql编程是对sql语言的扩展, 使得sql语言具有过程化编程的特性 主要用来编写存储过程和存储函数等 定义变量声明方法 没有大括号, 用begin&#x2F;end表示开始和结束 1234567891011121314declare--可以定义变量	i number(3,2) :&#x3D; 10;--用:&#x3D;赋值	s varchar2(10) :&#x3D;&amp;#x27;小明&amp;#x27;;	ena emp.ename%t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle - PL &#x2F; SQL">
+<meta property="og:url" content="http://example.com/2021/06/21/oracle/SQL-plsql/index.html">
+<meta property="og:site_name" content="逍 - BLOG">
+<meta property="og:description" content="pl&#x2F;sql编程是对sql语言的扩展, 使得sql语言具有过程化编程的特性 主要用来编写存储过程和存储函数等 定义变量声明方法 没有大括号, 用begin&#x2F;end表示开始和结束 1234567891011121314declare--可以定义变量	i number(3,2) :&#x3D; 10;--用:&#x3D;赋值	s varchar2(10) :&#x3D;&amp;#x27;小明&amp;#x27;;	ena emp.ename%t">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-21T00:55:14.306Z">
+<meta property="article:modified_time" content="2021-06-21T00:57:35.122Z">
+<meta property="article:author" content="bloodthirsty - platinumcatgx">
+<meta property="article:tag" content="旧笔记 | oracle">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="逍 - BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">逍 - BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-oracle/SQL-plsql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/21/oracle/SQL-plsql/" class="article-date">
+  <time datetime="2021-06-21T00:55:14.306Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Oracle - PL / SQL
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="pl-sql编程"><a href="#pl-sql编程" class="headerlink" title="pl/sql编程"></a>pl/sql编程</h1><p>是对sql语言的扩展, 使得sql语言具有<strong>过程</strong>化编程的特性</p>
+<p>主要用来编写存储过程和存储函数等</p>
+<h2 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h2><p><strong>声明方法</strong></p>
+<p>没有大括号, 用begin/end表示开始和结束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">--可以定义变量</span><br><span class="line">	i number(3,2) := 10;--用:=赋值</span><br><span class="line">	s varchar2(10) :=&#x27;小明&#x27;;</span><br><span class="line">	ena emp.ename%type;--指定为emp表的ename列的数据类型, 引用型变量</span><br><span class="line">	emprow emp%;--记录型变量</span><br><span class="line">begin--处理业务逻辑</span><br><span class="line">	dbms_output.put_line(i);--输出,相当于Java的System.out.println(i)</span><br><span class="line">	dbms_output.put_line(s);</span><br><span class="line">	select ename into ena from emp where empno = 7788;--用查询语句[into ena]赋值</span><br><span class="line">	select * into emprow from emp where empno = 7788;</span><br><span class="line">	dbms_output.put_line(ena);</span><br><span class="line">	dbms_output.put_line(emprow.ename|| &#x27;的工作为&#x27; || emprow.job);--||是连接符</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<p><strong>定义且赋值:</strong></p>
+<ul>
+<li>变量名 类型 := 值;</li>
+<li>select 列明 into 变量名 from 表明 where 条件;</li>
+</ul>
+<h2 id="pl-sql中的if判断"><a href="#pl-sql中的if判断" class="headerlink" title="pl/sql中的if判断"></a>pl/sql中的if判断</h2><blockquote>
+<p>输入小于18的数字, 输出未成年</p>
+<p>, &gt;18 &amp;&amp; &lt;40 中年人</p>
+<p>, &gt;40 老年人</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	i num(3) :=&amp;i;--得到一个输入的值</span><br><span class="line">begin</span><br><span class="line">	if i&lt;18 then</span><br><span class="line">		dbms_output.put_line(&#x27;未成年&#x27;);</span><br><span class="line">	elsif i&lt;40 then</span><br><span class="line">		dbms_output.put_line(&#x27;中年人&#x27;);</span><br><span class="line">	else</span><br><span class="line">		dbms_output.put_line(&#x27;老年人&#x27;);</span><br><span class="line">	end if;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="loop循环"><a href="#loop循环" class="headerlink" title="loop循环"></a>loop循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	i number(2) :=1;</span><br><span class="line">begin</span><br><span class="line">	while i&lt;11 loop</span><br><span class="line">		dbms_output.put_line(i);</span><br><span class="line">		i := i+1;</span><br><span class="line">	end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="exit循环"><a href="#exit循环" class="headerlink" title="exit循环"></a>exit循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	i number(2) :=1;</span><br><span class="line">begin</span><br><span class="line">	loop</span><br><span class="line">		exit when i&gt;10;</span><br><span class="line">			dbms_output.put_line(i);</span><br><span class="line">		i := i+1;</span><br><span class="line">	end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">	for i in 1..10 loop</span><br><span class="line">		dbms_output.put_line(i);</span><br><span class="line">	end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h2><p>类似Java中的集合, 可以存放多个对象, 多行记录</p>
+<blockquote>
+<p>输出emp表中所有员工的姓名</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	cursor c1 is select * from emp;</span><br><span class="line">	emprow emp%rowtype;</span><br><span class="line">begin</span><br><span class="line">	open c1;</span><br><span class="line">		loop</span><br><span class="line">			fetch c1 into emprow;--取值</span><br><span class="line">			exit when c1%notfound;--无法取到里面的值则退出</span><br><span class="line">			dbms_output.put_line(emprow.ename);</span><br><span class="line">		end loop;</span><br><span class="line">	close c1;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<p>给指定部门员工涨工资</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">	cursor c2(eno emp.deptno%type) </span><br><span class="line">	is select empno from emp where deptno = eno;--带参数的游标</span><br><span class="line">	en emp.empmo%type;</span><br><span class="line">begin</span><br><span class="line">	open c2(10);</span><br><span class="line">		loop</span><br><span class="line">			fetch c2 into en;</span><br><span class="line">			exit when c2%notfound;</span><br><span class="line">			update emp set sal = sal+100 where empno=en;</span><br><span class="line">			commit;</span><br><span class="line">		end loop;</span><br><span class="line">	close c1;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/SQL-plsql/" data-id="ckqbx1ik50003ss1z66pe4jmt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/06/21/oracle/%E8%A7%86%E5%9B%BE%20-%20%E7%B4%A2%E5%BC%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          视图 - 索引
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/21/oracle/Oracle%E6%9F%A5%E8%AF%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Oracle查询</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dubbo/">Dubbo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot/">Spring Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">Spring Boot | 配置文件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/zookeeper/">zookeeper</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dubbo/" rel="tag">dubbo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zookeeper/" rel="tag">zookeeper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" rel="tag">旧笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" rel="tag">旧笔记 | Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="tag">配置文件</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dubbo/" style="font-size: 10px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">旧笔记</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" style="font-size: 10px;">旧笔记 | Docker</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" style="font-size: 20px;">旧笔记 | oracle</a> <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" style="font-size: 10px;">配置文件</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/06/24/spring/SpringBoot%E6%95%B4%E5%90%88RocketMQ/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/23/%E6%A1%86%E6%9E%B62/RocketMQ/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/21/Docker-docker/">Docker</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/21/oracle/%E8%A7%A6%E5%8F%91%E5%99%A8/">触发器</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/21/oracle/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%AD%98%E5%87%BD%E6%95%B0/">存储过程与存函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 bloodthirsty - platinumcatgx<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

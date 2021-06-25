@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Oracle基础 | 逍 - BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本概念数据库, 实例, 用户, 表空间, 数据文件  连接身份: Normal(普通) Sysdba sysoper(管理员)  创建表空间(管理员身份)12345678create tablespace tablespace_namedatafile &amp;#x27;D:&#x2F;FilePathName.dbf&amp;#x27;size 100mautoextend on next 10m;  删除表空间1d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle基础">
+<meta property="og:url" content="http://example.com/2021/06/21/oracle/Oracle%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="逍 - BLOG">
+<meta property="og:description" content="基本概念数据库, 实例, 用户, 表空间, 数据文件  连接身份: Normal(普通) Sysdba sysoper(管理员)  创建表空间(管理员身份)12345678create tablespace tablespace_namedatafile &amp;#x27;D:&#x2F;FilePathName.dbf&amp;#x27;size 100mautoextend on next 10m;  删除表空间1d">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://bloodthirsty.top:8090/upload/2021/06/Oracle%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-eb1b564c419d4827ab396a3d13526fb4.png">
+<meta property="article:published_time" content="2021-06-21T00:53:05.456Z">
+<meta property="article:modified_time" content="2021-06-21T00:53:05.456Z">
+<meta property="article:author" content="bloodthirsty - platinumcatgx">
+<meta property="article:tag" content="旧笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://bloodthirsty.top:8090/upload/2021/06/Oracle%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-eb1b564c419d4827ab396a3d13526fb4.png">
+  
+    <link rel="alternate" href="/atom.xml" title="逍 - BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">逍 - BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-oracle/Oracle基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/06/21/oracle/Oracle%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-06-21T00:53:05.456Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Oracle基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>数据库, 实例, 用户, 表空间, 数据文件</p>
+<p><img src="http://bloodthirsty.top:8090/upload/2021/06/Oracle%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-eb1b564c419d4827ab396a3d13526fb4.png" alt="Oracle体系结构.png"></p>
+<h2 id="连接身份"><a href="#连接身份" class="headerlink" title="连接身份:"></a>连接身份:</h2><blockquote>
+<p>Normal(普通)</p>
+<p>Sysdba</p>
+<p>sysoper(管理员)</p>
+</blockquote>
+<h2 id="创建表空间-管理员身份"><a href="#创建表空间-管理员身份" class="headerlink" title="创建表空间(管理员身份)"></a>创建表空间(管理员身份)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span>space tablespace_name</span><br><span class="line"></span><br><span class="line">datafile <span class="string">&#x27;D:/FilePathName.dbf&#x27;</span></span><br><span class="line"></span><br><span class="line">size <span class="number">100</span>m</span><br><span class="line"></span><br><span class="line">autoextend <span class="keyword">on</span> </span><br><span class="line">next <span class="number">10</span>m;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除表空间"><a href="#删除表空间" class="headerlink" title="删除表空间"></a>删除表空间</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deop tablespace tablespace_name;</span><br></pre></td></tr></table></figure>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> gx</span><br><span class="line">identified <span class="keyword">by</span> gx</span><br><span class="line"><span class="keyword">default</span> tablespace tablespace_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="给用户授权"><a href="#给用户授权" class="headerlink" title="给用户授权"></a>给用户授权</h2><blockquote>
+<p>常用角色<br>connect  连接角色, 基本角色<br>resource 开发者角色<br>dba 超级管理员角色</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> gx;</span><br></pre></td></tr></table></figure>
+
+<h2 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h2><p><code>conn 用户名 /密码</code></p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><blockquote>
+<p> varchar, varchar2 字符串</p>
+<p>number(n)长度为n的整数</p>
+<p>number(m,n) 表示一个小数, 总长度m,小数是n</p>
+<p>Date 日期</p>
+<p>clob 大对象,文本数据,可存4G</p>
+<p>blob 大数据,二进制,可存4G</p>
+</blockquote>
+<h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_Name(</span><br><span class="line">	tid number(<span class="number">20</span>),</span><br><span class="line">	tname varchar2(<span class="number">10</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h1><p>添加列</p>
+<p><code>alter table table_Name add (gender number(1));</code></p>
+<p>修改列类型</p>
+<p><code>alter table table_Name modify gender char(1); </code></p>
+<p>修改列名称</p>
+<p><code>alter table table_name rename column gender to sex;</code></p>
+<p>删除列</p>
+<p><code>alter table table_name drop column sex;</code></p>
+<h1 id="数据增删改"><a href="#数据增删改" class="headerlink" title="数据增删改"></a>数据增删改</h1><p>增删改, 必须提交事务, 否则为脏数据</p>
+<p><code>commit;</code> </p>
+<p>添加</p>
+<p><code>insert into table_name (tid,tname ) values(1,&#39;张三&#39;);</code></p>
+<p>修改</p>
+<p><code>update table_name set tname=&#39;gx&#39; where tid=1;</code></p>
+<p>删除</p>
+<ul>
+<li><code>delete from table_name;</code>–删除表中全部记录</li>
+<li><code>drop table table_name;</code>–删除表</li>
+<li><code>truncate table table_name;</code>–先删表, 再创建表(数据量大的时候, 尤其是表中带有索引,该操作效率高)</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1><p>默认1开始, 一次递增,主要用来给主键赋值</p>
+<p>不属于某一 张表, 但是可以逻辑和表绑定</p>
+<p><strong>dual</strong>: 虚表 , 只是为了补全语法, 没有任何意义</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建序列 </span></span><br><span class="line"><span class="keyword">create</span> sequence s_table_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> s_table_name.nextval <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> s_table_name.currval <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name (tid,tname ) <span class="keyword">values</span>(s_table_name.nextval,<span class="string">&#x27;张三&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="scott用户"><a href="#scott用户" class="headerlink" title="scott用户"></a>scott用户</h1><p>默认密码: tiger</p>
+<p>可以模拟各种复杂的查询</p>
+<p>解锁scott用户</p>
+<p><code>alter user scott account unlock;</code></p>
+<p>解锁密码[重置密码]</p>
+<p><code>alter user scott identified by tiger;</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/oracle/Oracle%E5%9F%BA%E7%A1%80/" data-id="ckqbx1ijz0001ss1z842s9n5x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" rel="tag">旧笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/06/21/oracle/Oracle%E6%9F%A5%E8%AF%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Oracle查询
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/19/%E6%A1%86%E6%9E%B62/ElasticSearch/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dubbo/">Dubbo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot/">Spring Boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Boot-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">Spring Boot | 配置文件</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/zookeeper/">zookeeper</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dubbo/" rel="tag">dubbo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zookeeper/" rel="tag">zookeeper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" rel="tag">旧笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" rel="tag">旧笔记 | Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" rel="tag">旧笔记 | oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="tag">配置文件</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dubbo/" style="font-size: 10px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">旧笔记</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-Docker/" style="font-size: 10px;">旧笔记 | Docker</a> <a href="/tags/%E6%97%A7%E7%AC%94%E8%AE%B0-oracle/" style="font-size: 20px;">旧笔记 | oracle</a> <a href="/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" style="font-size: 10px;">配置文件</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/06/24/spring/SpringBoot%E6%95%B4%E5%90%88RocketMQ/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/23/%E6%A1%86%E6%9E%B62/RocketMQ/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/21/Docker-docker/">Docker</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/21/oracle/%E8%A7%A6%E5%8F%91%E5%99%A8/">触发器</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/21/oracle/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%AD%98%E5%87%BD%E6%95%B0/">存储过程与存函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 bloodthirsty - platinumcatgx<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
