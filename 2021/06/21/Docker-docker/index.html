@@ -5,16 +5,19 @@
   
 
   
-  <title>逍 - BLOG</title>
+  <title>Docker | 逍 - BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个博客而已">
-<meta property="og:type" content="website">
-<meta property="og:title" content="逍 - BLOG">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="docker安装 运行与停止 运行 docker run ubuntu:15.10 &#x2F;bin&#x2F;echo “Hello world”  docker: Docker 的二进制执行文件。 run: 与前面的 docker 组合来运行一个容器 ubuntu:15.10 指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://example.com/2021/06/21/Docker-docker/index.html">
 <meta property="og:site_name" content="逍 - BLOG">
-<meta property="og:description" content="一个博客而已">
+<meta property="og:description" content="docker安装 运行与停止 运行 docker run ubuntu:15.10 &#x2F;bin&#x2F;echo “Hello world”  docker: Docker 的二进制执行文件。 run: 与前面的 docker 组合来运行一个容器 ubuntu:15.10 指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-21T01:03:33.120Z">
+<meta property="article:modified_time" content="2021-06-21T01:03:33.120Z">
 <meta property="article:author" content="bloodthirsty - platinumcatgx">
+<meta property="article:tag" content="旧笔记 | Docker">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="逍 - BLOG" type="application/atom+xml">
@@ -64,69 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-SpringBoot整合RocketMQ" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/06/24/SpringBoot%E6%95%B4%E5%90%88RocketMQ/" class="article-date">
-  <time datetime="2021-06-24T13:43:31.242Z" itemprop="datePublished">2021-06-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 整合rocketmq</span></span><br><span class="line"><span class="attr">rocketmq:</span></span><br><span class="line">  <span class="attr">name-server:</span> <span class="string">localhost:9876</span></span><br><span class="line"><span class="comment">#  name-server: 139.9.37.235:9876</span></span><br><span class="line">  <span class="attr">producer:</span></span><br><span class="line">    <span class="attr">group:</span> <span class="string">rocketmq_springboot_producer_group1</span></span><br><span class="line">    <span class="attr">send-message-timeout:</span> <span class="number">3000</span></span><br><span class="line">    <span class="attr">retry-times-when-send-async-failed:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">retry-times-when-send-failed:</span> <span class="number">3</span></span><br><span class="line">    <span class="attr">max-message-size:</span> <span class="number">4098</span> <span class="comment"># 4mb</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/SpringBoot%E6%95%B4%E5%90%88RocketMQ/" data-id="ckqayiz4r0000i81z0fyn68bl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-RocketMQ" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/06/23/RocketMQ/" class="article-date">
-  <time datetime="2021-06-23T08:23:26.938Z" itemprop="datePublished">2021-06-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="RcoketMQ"><a href="#RcoketMQ" class="headerlink" title="RcoketMQ"></a>RcoketMQ</h1><p><strong>什么是MQ</strong></p>
-<p>MQ（Message Queue）消息队列，是一种用来保存消息数据的队列。</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/23/RocketMQ/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/RocketMQ/" data-id="ckq97z1bj0000rg1zeqowhk09" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Docker-docker" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Docker-docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/06/21/Docker-docker/" class="article-date">
   <time datetime="2021-06-21T01:03:33.120Z" itemprop="datePublished">2021-06-21</time>
@@ -139,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/21/Docker-docker/">Docker</a>
+    <h1 class="article-title" itemprop="name">
+      Docker
     </h1>
   
 
@@ -449,212 +390,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-ElasticSearch" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/06/19/ElasticSearch/" class="article-date">
-  <time datetime="2021-06-19T12:07:50.018Z" itemprop="datePublished">2021-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><p>搜索服务器</p>
+    <a href="/2021/06/23/RocketMQ/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-          <p class="article-more-link">
-            <a href="/2021/06/19/ElasticSearch/#more">Read More</a>
-          </p>
+          (no title)
         
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/19/ElasticSearch/" data-id="ckq952cof0004941z66fm2wnu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/19/ElasticSearch/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
   
 </article>
-
-
-  
-    <article id="post-Spring Boot 自动配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/06/18/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2021-06-18T01:34:16.843Z" itemprop="datePublished">2021-06-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring-Boot-自动配置功能"><a href="#Spring-Boot-自动配置功能" class="headerlink" title="Spring Boot 自动配置功能"></a>Spring Boot 自动配置功能</h1>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/18/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/18/Spring%20Boot%20%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" data-id="ckq952co00000941zap1m8yl3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-YAML作为配置文件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/06/16/YAML%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="article-date">
-  <time datetime="2021-06-16T03:14:53.661Z" itemprop="datePublished">2021-06-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="yaml的优势"><a href="#yaml的优势" class="headerlink" title="yaml的优势"></a>yaml的优势</h2><p>以数据为核心,  相对其他配置文件, 阅读起来直观, 书写起来也比较简洁</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/16/YAML%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/16/YAML%E4%BD%9C%E4%B8%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" data-id="ckq952cob0001941z1llab28s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SpringBoot" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/06/16/SpringBoot/" class="article-date">
-  <time datetime="2021-06-16T01:31:45.951Z" itemprop="datePublished">2021-06-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h1><h2 id="为什么使用Spring-Boot"><a href="#为什么使用Spring-Boot" class="headerlink" title="为什么使用Spring Boot:"></a>为什么使用Spring Boot:</h2><p>源于Spring的<code>开发简单, 配置地狱</code>问题, Spring Boot为Spring提供了一种<strong>快速启动</strong>的方式</p>
-<p>Spring Boot并不是一项技术, 它并不是为了解决了什么问题, 它只是为Spring提供了一种快速使用的方式</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/16/SpringBoot/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/16/SpringBoot/" data-id="ckq952coe0002941z0yz37xbp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-req&amp;resp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/04/23/req&resp/" class="article-date">
-  <time datetime="2021-04-23T06:16:05.052Z" itemprop="datePublished">2021-04-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="相应与请求"><a href="#相应与请求" class="headerlink" title="相应与请求"></a>相应与请求</h1>
-        
-          <p class="article-more-link">
-            <a href="/2021/04/23/req&resp/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/23/req&resp/" data-id="ckq952coe0003941z9560hzcx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Dubbo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/21/Dubbo/" class="article-date">
-  <time datetime="2019-11-21T05:44:57.000Z" itemprop="datePublished">2019-11-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/Dubbo/">笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h1><h2 id="DUBBO简介"><a href="#DUBBO简介" class="headerlink" title="DUBBO简介"></a>DUBBO简介</h2><p>dubbo: 一个款微服务开发框架, 提供了 RPC通信 与 微服务治理 两大关键能力</p>
-<blockquote>
-<p>这意味着，使用 Dubbo 开发的微服务，将具备相互之间的远程发现与通信能力， 同时利用<br>Dubbo 提供的丰富服务治理能力，实现诸如服务发现、负载均衡、流量调度等服务治理诉求</p>
-<p>同时 Dubbo 是高度可扩展的，用户几乎可以在任意功能点去定制自己的实现， 以改变框架的默认行为满足自己的业务需求。</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/11/21/Dubbo/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2019/11/21/Dubbo/" data-id="ckq95dgkw0000x01z6gmkcehd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
