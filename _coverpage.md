@@ -6,7 +6,7 @@
 
 > 一个空空的个人文档网站。
 
-- 时间 
+- 烂得离谱
 
 [GitHub](https://github.com/platinumcatgx/)
 [Get Started](#Headline)
