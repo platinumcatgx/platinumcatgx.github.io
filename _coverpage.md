@@ -8,5 +8,5 @@
 
 - 烂得离谱
 
-[GitHub](https://github.com/platinumcatgx/)
+[GitHub](https://github.com/platinumcatgx/platinumcatgx.github.io)
 [Get Started](#Headline)
