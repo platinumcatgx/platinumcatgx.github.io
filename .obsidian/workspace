@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "566aa66dbb2120d4",
+    "type": "split",
+    "children": [
+      {
+        "id": "2be523ae65db1670",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "模板/YAML 文件头.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "50ebe835a1dff869",
+    "type": "split",
+    "children": [
+      {
+        "id": "c76dd62cfaf0e90f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "50d36643f8f51205",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "21c63fc678552dc6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "模板/YAML 文件头.md"
+              }
+            }
+          },
+          {
+            "id": "5881e0f8ee8db0af",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f291a24cfa8ca0d5",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 456
+  },
+  "right": {
+    "id": "9a78606e4f87ce81",
+    "type": "split",
+    "children": [],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "2be523ae65db1670",
+  "lastOpenFiles": [
+    "模板/文献精读.md",
+    "模板/论文写作计划.md",
+    "模板/论文写作大纲.md",
+    "模板/日记模板/每日复盘.md",
+    "模板/看板卡片.md",
+    "模板/日记模板/5分钟日记法.md",
+    "模板/日记模板/晨间日记.md",
+    "模板/日记模板/日记模板.md",
+    "README.md",
+    "hide/随笔/雷军N年前的博客.md"
+  ]
+}

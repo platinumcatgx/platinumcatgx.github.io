@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-relative-find",
+	"name": "Relative Find",
+	"version": "0.5.0",
+	"minAppVersion": "0.12.11",
+	"description": "This Plugin lets you search relative to your Cursor Position.",
+	"author": "phibr0",
+	"authorUrl": "https://phibr0.de",
+	"isDesktopOnly": false
+}

@@ -1,0 +1,13 @@
+{
+  "show-relative-date": true,
+  "new-note-template": "模板/看板卡片.md",
+  "new-note-folder": "看板",
+  "metadata-keys": [
+    {
+      "metadataKey": "",
+      "label": "",
+      "shouldHideLabel": false,
+      "containsMarkdown": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-oura-plugin",
+	"name": "Oura Ring",
+	"version": "0.0.2",
+	"minAppVersion": "0.9.12",
+	"description": "Oura Ring",
+	"author": "Andrew Lombardi",
+	"authorUrl": "https://mysticcoders.com",
+	"isDesktopOnly": false
+}

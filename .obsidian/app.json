@@ -1,0 +1,16 @@
+{
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "static/files",
+  "newLinkFormat": "relative",
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "showFrontmatter": true,
+  "useTab": false,
+  "newFileLocation": "root",
+  "strictLineBreaks": true,
+  "foldHeading": false,
+  "autoPairBrackets": true,
+  "autoPairMarkdown": true,
+  "legacyEditor": false,
+  "promptDelete": false
+}
